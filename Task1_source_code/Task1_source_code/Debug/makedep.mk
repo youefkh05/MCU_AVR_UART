@@ -8,6 +8,8 @@ HAL\EEPROM\EEPROM_Interface.c
 
 HAL\IO\LCD\LCD.c
 
+HAL\IO\LM35_TMP_Sensor\LM35_TMP_Sensor_Interface.c
+
 HAL\IO\Motors\DC\DC_Interface.c
 
 HAL\IO\Motors\SERVO\Servo_Interface.c

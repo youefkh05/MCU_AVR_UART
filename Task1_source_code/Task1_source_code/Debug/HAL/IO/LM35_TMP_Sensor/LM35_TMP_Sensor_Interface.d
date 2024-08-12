@@ -1,4 +1,8 @@
-APP/APP.d APP/APP.o: ../APP/APP.c ../APP/APP.h \
+HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Interface.d \
+ HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Interface.o: \
+ ../HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Interface.c \
+ ../HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Private.h \
+ ../HAL/IO/LM35_TMP_Sensor/LM35_TMP_SENSOR_Configurations.h \
  ../MCAL/Configurations/PERIPHERAL_LIBRARY.h \
  ../MCAL/Configurations/CPU_CONFIGURATIONS.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\io.h \
@@ -27,19 +31,11 @@ APP/APP.d APP/APP.o: ../APP/APP.c ../APP/APP.h \
  ../MCAL/ADC/ADC_Configuration.h ../MCAL/ADC/ADC_Address.h \
  ../MCAL/Timer0/Timer0_Private.h ../MCAL/Timer0/Timer0_Configuration.h \
  ../MCAL/UART/UART_Private.h ../MCAL/UART/UART_Configurations.h \
- ../MCAL/TWI/TWI_Private.h ../MCAL/TWI/TWI_CONFIG.h \
- ../HAL/Configurations/MODULE_LIBRARY.h ../HAL/IO/LCD/I2C_LCD_PRIVATE.h \
- ../HAL/IO/LCD/I2C_LCD_INTERFACE.h ../HAL/IO/Motors/DC/DC_Private.h \
- ../HAL/IO/Motors/DC/DC_Configurations.h \
- ../HAL/IO/Motors/SERVO/Servo_Private.h \
- ../HAL/IO/Motors/SERVO/Servo_Configurations.h \
- ../HAL/EEPROM/EEPROM_Private.h ../HAL/EEPROM/EEPROM_Configurations.h \
- ../HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Private.h \
- ../HAL/IO/LM35_TMP_Sensor/LM35_TMP_SENSOR_Configurations.h \
- c:\program\ files\microchip\xc8\v2.36\avr\avr\include\stdio.h \
- c:\program\ files\microchip\xc8\v2.36\avr\avr\include\string.h
+ ../MCAL/TWI/TWI_Private.h ../MCAL/TWI/TWI_CONFIG.h
 
-../APP/APP.h:
+../HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Private.h:
+
+../HAL/IO/LM35_TMP_Sensor/LM35_TMP_SENSOR_Configurations.h:
 
 ../MCAL/Configurations/PERIPHERAL_LIBRARY.h:
 
@@ -110,29 +106,3 @@ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h:
 ../MCAL/TWI/TWI_Private.h:
 
 ../MCAL/TWI/TWI_CONFIG.h:
-
-../HAL/Configurations/MODULE_LIBRARY.h:
-
-../HAL/IO/LCD/I2C_LCD_PRIVATE.h:
-
-../HAL/IO/LCD/I2C_LCD_INTERFACE.h:
-
-../HAL/IO/Motors/DC/DC_Private.h:
-
-../HAL/IO/Motors/DC/DC_Configurations.h:
-
-../HAL/IO/Motors/SERVO/Servo_Private.h:
-
-../HAL/IO/Motors/SERVO/Servo_Configurations.h:
-
-../HAL/EEPROM/EEPROM_Private.h:
-
-../HAL/EEPROM/EEPROM_Configurations.h:
-
-../HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Private.h:
-
-../HAL/IO/LM35_TMP_Sensor/LM35_TMP_SENSOR_Configurations.h:
-
-c:\program\ files\microchip\xc8\v2.36\avr\avr\include\stdio.h:
-
-c:\program\ files\microchip\xc8\v2.36\avr\avr\include\string.h:

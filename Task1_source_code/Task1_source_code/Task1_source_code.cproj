@@ -111,6 +111,7 @@
       <Value>../MCAL/Timer0</Value>
       <Value>../MCAL/TWI</Value>
       <Value>../MCAL/UART</Value>
+      <Value>../HAL/IO/LM35_TMP_Sensor</Value>
     </ListValues>
   </com.microchip.xc8.compiler.directories.IncludePaths>
   <com.microchip.xc8.compiler.optimization.level>Optimize debugging experience (-Og)</com.microchip.xc8.compiler.optimization.level>
@@ -153,6 +154,13 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HAL\IO\LCD\LCD.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LM35_TMP_Sensor\LM35_TMP_Sensor_Configurations.h" />
+    <Compile Include="HAL\IO\LM35_TMP_Sensor\LM35_TMP_Sensor_Interface.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LM35_TMP_Sensor\LM35_TMP_Sensor_Private.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HAL\IO\Motors\DC\DC_Configurations.h">
@@ -275,6 +283,7 @@
     <Folder Include="HAL\EEPROM\" />
     <Folder Include="HAL\IO\" />
     <Folder Include="HAL\IO\LCD\" />
+    <Folder Include="HAL\IO\LM35_TMP_Sensor\" />
     <Folder Include="HAL\IO\Motors\" />
     <Folder Include="HAL\IO\Motors\DC\" />
     <Folder Include="HAL\IO\Motors\SERVO\" />

@@ -35,7 +35,9 @@ HAL/EEPROM/EEPROM_Interface.d HAL/EEPROM/EEPROM_Interface.o: \
  ../HAL/IO/Motors/DC/DC_Configurations.h \
  ../HAL/IO/Motors/SERVO/Servo_Private.h \
  ../HAL/IO/Motors/SERVO/Servo_Configurations.h \
- ../HAL/EEPROM/EEPROM_Private.h
+ ../HAL/EEPROM/EEPROM_Private.h \
+ ../HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Private.h \
+ ../HAL/IO/LM35_TMP_Sensor/LM35_TMP_SENSOR_Configurations.h
 
 ../HAL/EEPROM/EEPROM_Private.h:
 
@@ -126,3 +128,7 @@ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h:
 ../HAL/IO/Motors/SERVO/Servo_Configurations.h:
 
 ../HAL/EEPROM/EEPROM_Private.h:
+
+../HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Private.h:
+
+../HAL/IO/LM35_TMP_Sensor/LM35_TMP_SENSOR_Configurations.h:

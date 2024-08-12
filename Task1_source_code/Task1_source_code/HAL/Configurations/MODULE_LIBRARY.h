@@ -20,5 +20,6 @@
 #include "DC_Private.h"
 #include "Servo_Private.h"
 #include "EEPROM_Private.h"
+#include "LM35_TMP_Sensor_Private.h"
 
 #endif /* MODULE_LIBRARY_H_ */

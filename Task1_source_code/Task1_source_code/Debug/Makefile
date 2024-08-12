@@ -40,6 +40,7 @@ SUBDIRS :=  \
 ../HAL/EEPROM/ \
 ../HAL/IO/ \
 ../HAL/IO/LCD/ \
+../HAL/IO/LM35_TMP_Sensor/ \
 ../HAL/IO/Motors/ \
 ../HAL/IO/Motors/DC/ \
 ../HAL/IO/Motors/SERVO/ \
@@ -58,6 +59,7 @@ C_SRCS +=  \
 ../APP/APP.c \
 ../HAL/EEPROM/EEPROM_Interface.c \
 ../HAL/IO/LCD/LCD.c \
+../HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Interface.c \
 ../HAL/IO/Motors/DC/DC_Interface.c \
 ../HAL/IO/Motors/SERVO/Servo_Interface.c \
 ../main.c \
@@ -79,6 +81,7 @@ OBJS +=  \
 APP/APP.o \
 HAL/EEPROM/EEPROM_Interface.o \
 HAL/IO/LCD/LCD.o \
+HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Interface.o \
 HAL/IO/Motors/DC/DC_Interface.o \
 HAL/IO/Motors/SERVO/Servo_Interface.o \
 main.o \
@@ -93,6 +96,7 @@ OBJS_AS_ARGS +=  \
 APP/APP.o \
 HAL/EEPROM/EEPROM_Interface.o \
 HAL/IO/LCD/LCD.o \
+HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Interface.o \
 HAL/IO/Motors/DC/DC_Interface.o \
 HAL/IO/Motors/SERVO/Servo_Interface.o \
 main.o \
@@ -107,6 +111,7 @@ C_DEPS +=  \
 APP/APP.d \
 HAL/EEPROM/EEPROM_Interface.d \
 HAL/IO/LCD/LCD.d \
+HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Interface.d \
 HAL/IO/Motors/DC/DC_Interface.d \
 HAL/IO/Motors/SERVO/Servo_Interface.d \
 main.d \
@@ -121,6 +126,7 @@ C_DEPS_AS_ARGS +=  \
 APP/APP.d \
 HAL/EEPROM/EEPROM_Interface.d \
 HAL/IO/LCD/LCD.d \
+HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Interface.d \
 HAL/IO/Motors/DC/DC_Interface.d \
 HAL/IO/Motors/SERVO/Servo_Interface.d \
 main.d \
@@ -148,84 +154,91 @@ LINKER_SCRIPT_DEP+=
 APP/APP.o: ../APP/APP.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.36
-	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART" -I"../HAL/IO/LM35_TMP_Sensor"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 HAL/EEPROM/EEPROM_Interface.o: ../HAL/EEPROM/EEPROM_Interface.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.36
-	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART" -I"../HAL/IO/LM35_TMP_Sensor"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 HAL/IO/LCD/LCD.o: ../HAL/IO/LCD/LCD.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.36
-	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART" -I"../HAL/IO/LM35_TMP_Sensor"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Interface.o: ../HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Interface.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.36
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART" -I"../HAL/IO/LM35_TMP_Sensor"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 HAL/IO/Motors/DC/DC_Interface.o: ../HAL/IO/Motors/DC/DC_Interface.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.36
-	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART" -I"../HAL/IO/LM35_TMP_Sensor"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 HAL/IO/Motors/SERVO/Servo_Interface.o: ../HAL/IO/Motors/SERVO/Servo_Interface.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.36
-	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART" -I"../HAL/IO/LM35_TMP_Sensor"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 ./main.o: .././main.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.36
-	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART" -I"../HAL/IO/LM35_TMP_Sensor"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 MCAL/ADC/ADC_Interface.o: ../MCAL/ADC/ADC_Interface.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.36
-	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART" -I"../HAL/IO/LM35_TMP_Sensor"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 MCAL/DIO/DIO_Interface.o: ../MCAL/DIO/DIO_Interface.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.36
-	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART" -I"../HAL/IO/LM35_TMP_Sensor"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 MCAL/INTERRUPT/Interrupts_Interface.o: ../MCAL/INTERRUPT/Interrupts_Interface.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.36
-	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART" -I"../HAL/IO/LM35_TMP_Sensor"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 MCAL/Timer0/Timer0_Interface.o: ../MCAL/Timer0/Timer0_Interface.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.36
-	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART" -I"../HAL/IO/LM35_TMP_Sensor"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 MCAL/TWI/TWI.o: ../MCAL/TWI/TWI.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.36
-	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART" -I"../HAL/IO/LM35_TMP_Sensor"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 MCAL/UART/UART_Interface.o: ../MCAL/UART/UART_Interface.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.36
-	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32__ -DDEBUG  -I"../APP" -I"../HAL" -I"../Main" -I"../MCAL" -I"../HAL/Configurations" -I"../HAL/EEPROM" -I"../HAL/IO/LCD" -I"../HAL/IO/Motors/DC" -I"../HAL/IO/Motors/SERVO" -I"../MCAL/ADC" -I"../MCAL/Configurations" -I"../MCAL/DIO" -I"../MCAL/INTERRUPT" -I"../MCAL/Timer0" -I"../MCAL/TWI" -I"../MCAL/UART" -I"../HAL/IO/LM35_TMP_Sensor"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
