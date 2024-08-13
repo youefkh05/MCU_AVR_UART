@@ -11,14 +11,14 @@
 
 #include "PERIPHERAL_LIBRARY.h"
 
+#define Servo
+
 typedef enum
 {
-	angle_0 = 5,
-	angle_P90 = 7,
-	angle_N90 = 10
+	angle_0 = 438,
+	angle_P90 = 325,
+	angle_N90 = 560
 }servo_angle;
-
-
 
 
 
