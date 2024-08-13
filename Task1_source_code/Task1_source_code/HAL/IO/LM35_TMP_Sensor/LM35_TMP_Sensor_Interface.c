@@ -7,18 +7,13 @@
 
 #include "LM35_TMP_Sensor_Private.h"
 
-void AServoMotor_Initialize(void)
+void Initialize_TEMP_SENSOR(void)
 {
-	DDRD |= (1<<PD5);
-	
-	TCCR1A |= ((1<<WGM11) | (1<<COM1A1));
-	TCCR1A &=~ ((1<<WGM10)| (1<<COM1A0));
-	TCCR1B |= ((1<<WGM13) | (1<<WGM12) | (1<<CS12));
-	TCCR1B &=~ ((1<<CS11) | (1<<CS10));
-	ICR1 = 1249;
+	DIO_SetPinDirection(TEMP_SEN_PORT, TEMP_SEN_PIN, DIO_OUTPUT);
 }
 
-void AServoMotor_Rotate(int angle)
-{
-	OCR1A = (((ICR1*angle)/100)-1);
+temp Read_TEMP_SENSOR(void){
+	uint16_t temp_volt=ADC_Read(TEMP_SEN_PIN);
+	temp temp_read = temp_volt*500.0/1024.0 ;
+	return temp_read;
 }

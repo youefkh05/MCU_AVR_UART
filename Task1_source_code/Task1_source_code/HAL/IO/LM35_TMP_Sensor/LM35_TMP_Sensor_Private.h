@@ -11,9 +11,8 @@
 
 #include "LM35_TMP_SENSOR_Configurations.h"
 
-void AServoMotor_Initialize(void);
-
-void AServoMotor_Rotate(int angle);
+void Initialize_TEMP_SENSOR(void);
+temp Read_TEMP_SENSOR(void);
 
 
 

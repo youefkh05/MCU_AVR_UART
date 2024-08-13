@@ -10,15 +10,12 @@
 #define LM35_TMP_SENSOR_CONFIGURATIONS_H_
 
 #include "PERIPHERAL_LIBRARY.h"
-/*
-typedef enum
-{
-	angle_0 = 5,
-	angle_P90 = 7,
-	angle_N90 = 10
-}Aservo_angle;
-*/
 
+typedef fint32_t temp;
+// Renaming Pin
+#define TEMP_SEN_PIN    DIO_PIN0
+// Renaming Port
+#define TEMP_SEN_PORT   DIO_PORTA
 
 
 

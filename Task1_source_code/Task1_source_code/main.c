@@ -8,28 +8,26 @@
 #include <xc.h>
 #include "main.h"
 
+// Global variables
+volatile E2PROM_State currentState;
+volatile uint8_t buttonPressed = 0;
+volatile uint16_t temperature = 0;
+
 int main(void)
-{	int x=0;
-	dc_motor motor1=DC_Motor1;
-	DC_Initialize(motor1);
-	LED1_Initialize();
-	LED2_Initialize();
-	LED3_Initialize();
-	ServoMotor_Initialize();
+{	
+	/*		Initializations		*/
+	dc_motor DC_fan1=DC_Motor1;
+	DC_Initialize(DC_fan1);
+	Initialize_E2PROM_State();
+	Initialize_TEMP_SENSOR();
+	DIO_SetPinDirection(BOT1_PORT,BOT1_PIN,DIO_INPUT); //push button 
+	
+	// Read initial state from EEPROM
+	currentState = Read_E2PROM_State(EEPROM_State_Add);
+	
+	/*	Main	Code	*/
     while(1)
-    {	x++;
-		LED1_TGL();
-		LED2_TGL();
-		LED3_TGL();
-		ServoMotor_Rotate(angle_P90);
-		DC_Start(motor1, DC_CW);
-		_delay_ms(2000);
-		DC_Stop(motor1);
-		ServoMotor_Rotate(angle_0);
-		_delay_ms(2000);
-		DC_Start(motor1, DC_CCW);
-		ServoMotor_Rotate(angle_N90);
-		_delay_ms(2000);
-        //TODO:: Please write your application code 
+    {	
+		
     }
 }
