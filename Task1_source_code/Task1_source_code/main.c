@@ -10,21 +10,16 @@
 
 int main(void)
 {	int x=0;
-	servo_angle angle;
-	ServoMotor_Initialize();
+	dc_motor motor1=DC_Motor1;
+	DC_Initialize(motor1);
     while(1)
     {	x++;
-		angle=angle_P90;
-		
-		ServoMotor_Rotate(angle);
+		DC_Start(motor1, DC_CW);
 		_delay_ms(2000);
-		angle=angle_0;
-		ServoMotor_Rotate(angle);
+		DC_Stop(motor1);
 		_delay_ms(2000);
-		angle=angle_N90;
-		ServoMotor_Rotate(angle);
+		DC_Start(motor1, DC_CCW);
 		_delay_ms(2000);
-		
         //TODO:: Please write your application code 
     }
 }
