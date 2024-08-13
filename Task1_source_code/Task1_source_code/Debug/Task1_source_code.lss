@@ -5,79 +5,97 @@ Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
   0 .text         000000a8  00000000  00000000  00000074  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  0000047c  2**0
+  1 .data         00000000  00800060  00800060  00000590  2**0
                   ALLOC, LOAD, DATA
-  2 .comment      0000002f  00000000  00000000  0000047c  2**0
+  2 .comment      0000002f  00000000  00000000  00000590  2**0
                   CONTENTS, READONLY
-  3 .stack.descriptors.hdr 0000000e  00000000  00000000  000004ab  2**0
+  3 .stack.descriptors.hdr 0000000e  00000000  00000000  000005bf  2**0
                   CONTENTS, READONLY
-  4 .debug_aranges 000000b8  00000000  00000000  000004b9  2**0
+  4 .debug_aranges 00000188  00000000  00000000  000005cd  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   000016e0  00000000  00000000  00000571  2**0
+  5 .debug_info   00002867  00000000  00000000  00000755  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 0000079c  00000000  00000000  00001c51  2**0
+  6 .debug_abbrev 000009a9  00000000  00000000  00002fbc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00000820  00000000  00000000  000023ed  2**0
+  7 .debug_line   00000c7a  00000000  00000000  00003965  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000124  00000000  00000000  00002c10  2**2
+  8 .debug_frame  00000254  00000000  00000000  000045e0  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    000001d6  00000000  00000000  00002d34  2**0
+  9 .debug_str    000002ee  00000000  00000000  00004834  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    000007de  00000000  00000000  00002f0a  2**0
+ 10 .debug_loc    000007de  00000000  00000000  00004b22  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000088  00000000  00000000  000036e8  2**0
+ 11 .debug_ranges 00000118  00000000  00000000  00005300  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .text         00000004  000003fa  000003fa  0000046e  2**1
+ 12 .text         00000004  0000050e  0000050e  00000582  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 13 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00003770  2**2
+ 13 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00005418  2**2
                   CONTENTS, READONLY, DEBUGGING
- 14 .text.DC_Initialize 0000004a  00000350  00000350  000003c4  2**1
+ 14 .text.LED1_Initialize 0000000c  000004cc  000004cc  00000540  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 15 .text.DC_Start 00000090  0000026c  0000026c  000002e0  2**1
+ 15 .text.LED1_TGL 0000000a  000004f0  000004f0  00000564  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 16 .text.DC_Stop 0000004a  0000039a  0000039a  0000040e  2**1
+ 16 .text.LED2_Initialize 0000000c  000004d8  000004d8  0000054c  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 17 .text.main    00000054  000002fc  000002fc  00000370  2**1
+ 17 .text.LED2_TGL 0000000a  000004fa  000004fa  0000056e  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 18 .text.DIO_SetPinDirection 000000e2  000000a8  000000a8  0000011c  2**1
+ 18 .text.LED3_Initialize 0000000c  000004e4  000004e4  00000558  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 19 .text.DIO_SetPinValue 000000e2  0000018a  0000018a  000001fe  2**1
+ 19 .text.LED3_TGL 0000000a  00000504  00000504  00000578  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 20 .text.__dummy_fini 00000002  00000402  00000402  00000476  2**1
+ 20 .text.DC_Initialize 0000004a  000003ec  000003ec  00000460  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 21 .text.__dummy_funcs_on_exit 00000002  00000404  00000404  00000478  2**1
+ 21 .text.DC_Start 00000090  0000026c  0000026c  000002e0  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 22 .text.__dummy_simulator_exit 00000002  00000406  00000406  0000047a  2**1
+ 22 .text.DC_Stop 0000004a  00000436  00000436  000004aa  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 23 .text.exit    00000016  000003e4  000003e4  00000458  2**1
+ 23 .text.ServoMotor_Initialize 0000001c  00000480  00000480  000004f4  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 24 .text._Exit   00000004  000003fe  000003fe  00000472  2**1
+ 24 .text.ServoMotor_Rotate 0000001a  0000049c  0000049c  00000510  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 25 .text.main    00000088  000002fc  000002fc  00000370  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 26 .text.DIO_SetPinDirection 000000e2  000000a8  000000a8  0000011c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 27 .text.DIO_SetPinValue 000000e2  0000018a  0000018a  000001fe  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 28 .text.DIO_TogglePinValue 00000068  00000384  00000384  000003f8  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 29 .text.__dummy_fini 00000002  00000516  00000516  0000058a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 30 .text.__dummy_funcs_on_exit 00000002  00000518  00000518  0000058c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 31 .text.__dummy_simulator_exit 00000002  0000051a  0000051a  0000058e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 32 .text.exit    00000016  000004b6  000004b6  0000052a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 33 .text._Exit   00000004  00000512  00000512  00000586  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
-   4:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-   8:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-   c:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  10:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  14:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  18:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  1c:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  20:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  24:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  28:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  2c:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  30:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  34:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  38:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  3c:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  40:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  44:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  48:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  4c:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
-  50:	0c 94 fd 01 	jmp	0x3fa	; 0x3fa <__bad_interrupt>
+   4:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+   8:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+   c:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  10:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  14:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  18:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  1c:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  20:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  24:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  28:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  2c:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  30:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  34:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  38:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  3c:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  40:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  44:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  48:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  4c:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
+  50:	0c 94 87 02 	jmp	0x50e	; 0x50e <__bad_interrupt>
 
 00000054 <__ctors_end>:
   54:	11 24       	eor	r1, r1
@@ -121,7 +139,7 @@ Disassembly of section .text:
   98:	f4 07       	cpc	r31, r20
   9a:	31 f7       	brne	.-52     	; 0x68 <__do_copy_data+0x8>
   9c:	0e 94 7e 01 	call	0x2fc	; 0x2fc <main>
-  a0:	0c 94 f2 01 	jmp	0x3e4	; 0x3e4 <exit>
+  a0:	0c 94 5b 02 	jmp	0x4b6	; 0x4b6 <exit>
 
 000000a4 <_exit>:
   a4:	f8 94       	cli
@@ -131,59 +149,140 @@ Disassembly of section .text:
 
 Disassembly of section .text:
 
-000003fa <__bad_interrupt>:
- 3fa:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+0000050e <__bad_interrupt>:
+ 50e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+Disassembly of section .text.LED1_Initialize:
+
+000004cc <LED1_Initialize>:
+{
+	DIO_SetPinValue(LED1_PORT, LED1_PIN, LED1_HIGH);
+}
+void LED1_OFF(void)
+{
+	DIO_SetPinValue(LED1_PORT, LED1_PIN, LED1_LOW);
+ 4cc:	41 e0       	ldi	r20, 0x01	; 1
+ 4ce:	60 e0       	ldi	r22, 0x00	; 0
+ 4d0:	81 e0       	ldi	r24, 0x01	; 1
+ 4d2:	0e 94 54 00 	call	0xa8	; 0xa8 <_etext>
+ 4d6:	08 95       	ret
+
+Disassembly of section .text.LED1_TGL:
+
+000004f0 <LED1_TGL>:
+}
+void LED1_TGL(void)
+{
+	DIO_TogglePinValue(LED1_PORT, LED1_PIN);
+ 4f0:	60 e0       	ldi	r22, 0x00	; 0
+ 4f2:	81 e0       	ldi	r24, 0x01	; 1
+ 4f4:	0e 94 c2 01 	call	0x384	; 0x384 <DIO_TogglePinValue>
+ 4f8:	08 95       	ret
+
+Disassembly of section .text.LED2_Initialize:
+
+000004d8 <LED2_Initialize>:
+{
+	DIO_SetPinValue(LED2_PORT, LED2_PIN, LED2_HIGH);
+}
+void LED2_OFF(void)
+{
+	DIO_SetPinValue(LED2_PORT, LED2_PIN, LED2_LOW);
+ 4d8:	41 e0       	ldi	r20, 0x01	; 1
+ 4da:	61 e0       	ldi	r22, 0x01	; 1
+ 4dc:	81 e0       	ldi	r24, 0x01	; 1
+ 4de:	0e 94 54 00 	call	0xa8	; 0xa8 <_etext>
+ 4e2:	08 95       	ret
+
+Disassembly of section .text.LED2_TGL:
+
+000004fa <LED2_TGL>:
+}
+void LED2_TGL(void)
+{
+	DIO_TogglePinValue(LED2_PORT, LED2_PIN);
+ 4fa:	61 e0       	ldi	r22, 0x01	; 1
+ 4fc:	81 e0       	ldi	r24, 0x01	; 1
+ 4fe:	0e 94 c2 01 	call	0x384	; 0x384 <DIO_TogglePinValue>
+ 502:	08 95       	ret
+
+Disassembly of section .text.LED3_Initialize:
+
+000004e4 <LED3_Initialize>:
+{
+	DIO_SetPinValue(LED3_PORT, LED3_PIN, LED3_HIGH);
+}
+void LED3_OFF(void)
+{
+	DIO_SetPinValue(LED3_PORT, LED3_PIN, LED3_LOW);
+ 4e4:	41 e0       	ldi	r20, 0x01	; 1
+ 4e6:	62 e0       	ldi	r22, 0x02	; 2
+ 4e8:	81 e0       	ldi	r24, 0x01	; 1
+ 4ea:	0e 94 54 00 	call	0xa8	; 0xa8 <_etext>
+ 4ee:	08 95       	ret
+
+Disassembly of section .text.LED3_TGL:
+
+00000504 <LED3_TGL>:
+}
+void LED3_TGL(void)
+{
+	DIO_TogglePinValue(LED3_PORT, LED3_PIN);
+ 504:	62 e0       	ldi	r22, 0x02	; 2
+ 506:	81 e0       	ldi	r24, 0x01	; 1
+ 508:	0e 94 c2 01 	call	0x384	; 0x384 <DIO_TogglePinValue>
+ 50c:	08 95       	ret
 
 Disassembly of section .text.DC_Initialize:
 
-00000350 <DC_Initialize>:
+000003ec <DC_Initialize>:
 
 #include "DC_Private.h"
 
 void DC_Initialize(dc_motor motor)
 {
 	switch(motor)
- 350:	88 23       	and	r24, r24
- 352:	19 f0       	breq	.+6      	; 0x35a <DC_Initialize+0xa>
- 354:	81 30       	cpi	r24, 0x01	; 1
- 356:	89 f0       	breq	.+34     	; 0x37a <DC_Initialize+0x2a>
- 358:	08 95       	ret
+ 3ec:	88 23       	and	r24, r24
+ 3ee:	19 f0       	breq	.+6      	; 0x3f6 <DC_Initialize+0xa>
+ 3f0:	81 30       	cpi	r24, 0x01	; 1
+ 3f2:	89 f0       	breq	.+34     	; 0x416 <__EEPROM_REGION_LENGTH__+0x16>
+ 3f4:	08 95       	ret
 	{
 		case DC_Motor1:
 		DIO_SetPinDirection(DC_Enable_Port, DC_Enable1_Pin, DC_OUTPUT);
- 35a:	41 e0       	ldi	r20, 0x01	; 1
- 35c:	60 e0       	ldi	r22, 0x00	; 0
- 35e:	82 e0       	ldi	r24, 0x02	; 2
- 360:	0e 94 54 00 	call	0xa8	; 0xa8 <__data_load_end>
+ 3f6:	41 e0       	ldi	r20, 0x01	; 1
+ 3f8:	60 e0       	ldi	r22, 0x00	; 0
+ 3fa:	82 e0       	ldi	r24, 0x02	; 2
+ 3fc:	0e 94 54 00 	call	0xa8	; 0xa8 <_etext>
 		DIO_SetPinDirection(DC_Motor_Port, DC_Motor1_A1, DC_OUTPUT);
- 364:	41 e0       	ldi	r20, 0x01	; 1
- 366:	61 e0       	ldi	r22, 0x01	; 1
- 368:	82 e0       	ldi	r24, 0x02	; 2
- 36a:	0e 94 54 00 	call	0xa8	; 0xa8 <__data_load_end>
+ 400:	41 e0       	ldi	r20, 0x01	; 1
+ 402:	61 e0       	ldi	r22, 0x01	; 1
+ 404:	82 e0       	ldi	r24, 0x02	; 2
+ 406:	0e 94 54 00 	call	0xa8	; 0xa8 <_etext>
 		DIO_SetPinDirection(DC_Motor_Port, DC_Motor1_A2, DC_OUTPUT);
- 36e:	41 e0       	ldi	r20, 0x01	; 1
- 370:	62 e0       	ldi	r22, 0x02	; 2
- 372:	82 e0       	ldi	r24, 0x02	; 2
- 374:	0e 94 54 00 	call	0xa8	; 0xa8 <__data_load_end>
+ 40a:	41 e0       	ldi	r20, 0x01	; 1
+ 40c:	62 e0       	ldi	r22, 0x02	; 2
+ 40e:	82 e0       	ldi	r24, 0x02	; 2
+ 410:	0e 94 54 00 	call	0xa8	; 0xa8 <_etext>
 		break;
- 378:	08 95       	ret
+ 414:	08 95       	ret
 		case DC_Motor2:
 		DIO_SetPinDirection(DC_Enable_Port, DC_Enable2_Pin, DC_OUTPUT);
- 37a:	41 e0       	ldi	r20, 0x01	; 1
- 37c:	62 e0       	ldi	r22, 0x02	; 2
- 37e:	82 e0       	ldi	r24, 0x02	; 2
- 380:	0e 94 54 00 	call	0xa8	; 0xa8 <__data_load_end>
+ 416:	41 e0       	ldi	r20, 0x01	; 1
+ 418:	62 e0       	ldi	r22, 0x02	; 2
+ 41a:	82 e0       	ldi	r24, 0x02	; 2
+ 41c:	0e 94 54 00 	call	0xa8	; 0xa8 <_etext>
 		DIO_SetPinDirection(DC_Motor_Port, DC_Motor2_A3, DC_OUTPUT);
- 384:	41 e0       	ldi	r20, 0x01	; 1
- 386:	62 e0       	ldi	r22, 0x02	; 2
- 388:	82 e0       	ldi	r24, 0x02	; 2
- 38a:	0e 94 54 00 	call	0xa8	; 0xa8 <__data_load_end>
+ 420:	41 e0       	ldi	r20, 0x01	; 1
+ 422:	62 e0       	ldi	r22, 0x02	; 2
+ 424:	82 e0       	ldi	r24, 0x02	; 2
+ 426:	0e 94 54 00 	call	0xa8	; 0xa8 <_etext>
 		DIO_SetPinDirection(DC_Motor_Port, DC_Motor2_A4, DC_OUTPUT);
- 38e:	41 e0       	ldi	r20, 0x01	; 1
- 390:	62 e0       	ldi	r22, 0x02	; 2
- 392:	82 e0       	ldi	r24, 0x02	; 2
- 394:	0e 94 54 00 	call	0xa8	; 0xa8 <__data_load_end>
- 398:	08 95       	ret
+ 42a:	41 e0       	ldi	r20, 0x01	; 1
+ 42c:	62 e0       	ldi	r22, 0x02	; 2
+ 42e:	82 e0       	ldi	r24, 0x02	; 2
+ 430:	0e 94 54 00 	call	0xa8	; 0xa8 <_etext>
+ 434:	08 95       	ret
 
 Disassembly of section .text.DC_Start:
 
@@ -290,51 +389,104 @@ void DC_Start(dc_motor motor, dc_motor_direction direction)
 
 Disassembly of section .text.DC_Stop:
 
-0000039a <DC_Stop>:
+00000436 <DC_Stop>:
 void DC_Stop(dc_motor motor)
 {
 	switch(motor)
- 39a:	88 23       	and	r24, r24
- 39c:	19 f0       	breq	.+6      	; 0x3a4 <DC_Stop+0xa>
- 39e:	81 30       	cpi	r24, 0x01	; 1
- 3a0:	89 f0       	breq	.+34     	; 0x3c4 <DC_Stop+0x2a>
- 3a2:	08 95       	ret
+ 436:	88 23       	and	r24, r24
+ 438:	19 f0       	breq	.+6      	; 0x440 <DC_Stop+0xa>
+ 43a:	81 30       	cpi	r24, 0x01	; 1
+ 43c:	89 f0       	breq	.+34     	; 0x460 <DC_Stop+0x2a>
+ 43e:	08 95       	ret
 	{
 		case DC_Motor1:
 		DIO_SetPinValue(DC_Enable_Port, DC_Enable1_Pin, DC_LOW);
- 3a4:	40 e0       	ldi	r20, 0x00	; 0
- 3a6:	60 e0       	ldi	r22, 0x00	; 0
- 3a8:	82 e0       	ldi	r24, 0x02	; 2
- 3aa:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_SetPinValue>
+ 440:	40 e0       	ldi	r20, 0x00	; 0
+ 442:	60 e0       	ldi	r22, 0x00	; 0
+ 444:	82 e0       	ldi	r24, 0x02	; 2
+ 446:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_SetPinValue>
 		DIO_SetPinValue(DC_Motor_Port, DC_Motor1_A1, DC_LOW);
- 3ae:	40 e0       	ldi	r20, 0x00	; 0
- 3b0:	61 e0       	ldi	r22, 0x01	; 1
- 3b2:	82 e0       	ldi	r24, 0x02	; 2
- 3b4:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_SetPinValue>
+ 44a:	40 e0       	ldi	r20, 0x00	; 0
+ 44c:	61 e0       	ldi	r22, 0x01	; 1
+ 44e:	82 e0       	ldi	r24, 0x02	; 2
+ 450:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_SetPinValue>
 		DIO_SetPinValue(DC_Motor_Port, DC_Motor1_A2, DC_LOW);
- 3b8:	40 e0       	ldi	r20, 0x00	; 0
- 3ba:	62 e0       	ldi	r22, 0x02	; 2
- 3bc:	82 e0       	ldi	r24, 0x02	; 2
- 3be:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_SetPinValue>
+ 454:	40 e0       	ldi	r20, 0x00	; 0
+ 456:	62 e0       	ldi	r22, 0x02	; 2
+ 458:	82 e0       	ldi	r24, 0x02	; 2
+ 45a:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_SetPinValue>
 		break;
- 3c2:	08 95       	ret
+ 45e:	08 95       	ret
 		case DC_Motor2:
 		DIO_SetPinValue(DC_Enable_Port, DC_Enable2_Pin, DC_LOW);
- 3c4:	40 e0       	ldi	r20, 0x00	; 0
- 3c6:	62 e0       	ldi	r22, 0x02	; 2
- 3c8:	82 e0       	ldi	r24, 0x02	; 2
- 3ca:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_SetPinValue>
+ 460:	40 e0       	ldi	r20, 0x00	; 0
+ 462:	62 e0       	ldi	r22, 0x02	; 2
+ 464:	82 e0       	ldi	r24, 0x02	; 2
+ 466:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_SetPinValue>
 		DIO_SetPinValue(DC_Motor_Port, DC_Motor2_A3, DC_LOW);
- 3ce:	40 e0       	ldi	r20, 0x00	; 0
- 3d0:	62 e0       	ldi	r22, 0x02	; 2
- 3d2:	82 e0       	ldi	r24, 0x02	; 2
- 3d4:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_SetPinValue>
+ 46a:	40 e0       	ldi	r20, 0x00	; 0
+ 46c:	62 e0       	ldi	r22, 0x02	; 2
+ 46e:	82 e0       	ldi	r24, 0x02	; 2
+ 470:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_SetPinValue>
 		DIO_SetPinValue(DC_Motor_Port, DC_Motor2_A4, DC_LOW);
- 3d8:	40 e0       	ldi	r20, 0x00	; 0
- 3da:	62 e0       	ldi	r22, 0x02	; 2
- 3dc:	82 e0       	ldi	r24, 0x02	; 2
- 3de:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_SetPinValue>
- 3e2:	08 95       	ret
+ 474:	40 e0       	ldi	r20, 0x00	; 0
+ 476:	62 e0       	ldi	r22, 0x02	; 2
+ 478:	82 e0       	ldi	r24, 0x02	; 2
+ 47a:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_SetPinValue>
+ 47e:	08 95       	ret
+
+Disassembly of section .text.ServoMotor_Initialize:
+
+00000480 <ServoMotor_Initialize>:
+
+#include "Servo_Private.h"
+
+void ServoMotor_Initialize(void)
+{
+	DDRD |= (1<<PD5);	/* Make OC1A pin as output */
+ 480:	81 b3       	in	r24, 0x11	; 17
+ 482:	80 62       	ori	r24, 0x20	; 32
+ 484:	81 bb       	out	0x11, r24	; 17
+	TCNT1 = 0;			/* Set timer1 count zero */
+ 486:	1d bc       	out	0x2d, r1	; 45
+ 488:	1c bc       	out	0x2c, r1	; 44
+	ICR1 = 2499;		/* Set TOP count for timer1 in ICR1 register */
+ 48a:	83 ec       	ldi	r24, 0xC3	; 195
+ 48c:	99 e0       	ldi	r25, 0x09	; 9
+ 48e:	97 bd       	out	0x27, r25	; 39
+ 490:	86 bd       	out	0x26, r24	; 38
+
+	/* Set Fast PWM, TOP in ICR1, Clear OC1A on compare match, clk/64 */
+	TCCR1A = (1<<WGM11)|(1<<COM1A1);
+ 492:	82 e8       	ldi	r24, 0x82	; 130
+ 494:	8f bd       	out	0x2f, r24	; 47
+	TCCR1B = (1<<WGM12)|(1<<WGM13)|(1<<CS10)|(1<<CS11);
+ 496:	8b e1       	ldi	r24, 0x1B	; 27
+ 498:	8e bd       	out	0x2e, r24	; 46
+ 49a:	08 95       	ret
+
+Disassembly of section .text.ServoMotor_Rotate:
+
+0000049c <ServoMotor_Rotate>:
+	
+}
+
+void ServoMotor_Rotate(servo_angle angle)
+{
+	OCR1A=((ICR1+1)/4)-angle;
+ 49c:	26 b5       	in	r18, 0x26	; 38
+ 49e:	37 b5       	in	r19, 0x27	; 39
+ 4a0:	2f 5f       	subi	r18, 0xFF	; 255
+ 4a2:	3f 4f       	sbci	r19, 0xFF	; 255
+ 4a4:	36 95       	lsr	r19
+ 4a6:	27 95       	ror	r18
+ 4a8:	36 95       	lsr	r19
+ 4aa:	27 95       	ror	r18
+ 4ac:	28 1b       	sub	r18, r24
+ 4ae:	39 0b       	sbc	r19, r25
+ 4b0:	3b bd       	out	0x2b, r19	; 43
+ 4b2:	2a bd       	out	0x2a, r18	; 42
+ 4b4:	08 95       	ret
 
 Disassembly of section .text.main:
 
@@ -346,56 +498,82 @@ int main(void)
 	dc_motor motor1=DC_Motor1;
 	DC_Initialize(motor1);
  2fc:	80 e0       	ldi	r24, 0x00	; 0
- 2fe:	0e 94 a8 01 	call	0x350	; 0x350 <DC_Initialize>
+ 2fe:	0e 94 f6 01 	call	0x3ec	; 0x3ec <DC_Initialize>
+	LED1_Initialize();
+ 302:	0e 94 66 02 	call	0x4cc	; 0x4cc <LED1_Initialize>
+	LED2_Initialize();
+ 306:	0e 94 6c 02 	call	0x4d8	; 0x4d8 <LED2_Initialize>
+	LED3_Initialize();
+ 30a:	0e 94 72 02 	call	0x4e4	; 0x4e4 <LED3_Initialize>
+	ServoMotor_Initialize();
+ 30e:	0e 94 40 02 	call	0x480	; 0x480 <ServoMotor_Initialize>
     while(1)
     {	x++;
+		LED1_TGL();
+ 312:	0e 94 78 02 	call	0x4f0	; 0x4f0 <LED1_TGL>
+		LED2_TGL();
+ 316:	0e 94 7d 02 	call	0x4fa	; 0x4fa <LED2_TGL>
+		LED3_TGL();
+ 31a:	0e 94 82 02 	call	0x504	; 0x504 <LED3_TGL>
+		ServoMotor_Rotate(angle_P90);
+ 31e:	85 e4       	ldi	r24, 0x45	; 69
+ 320:	91 e0       	ldi	r25, 0x01	; 1
+ 322:	0e 94 4e 02 	call	0x49c	; 0x49c <ServoMotor_Rotate>
 		DC_Start(motor1, DC_CW);
- 302:	60 e0       	ldi	r22, 0x00	; 0
- 304:	80 e0       	ldi	r24, 0x00	; 0
- 306:	0e 94 36 01 	call	0x26c	; 0x26c <DC_Start>
+ 326:	60 e0       	ldi	r22, 0x00	; 0
+ 328:	80 e0       	ldi	r24, 0x00	; 0
+ 32a:	0e 94 36 01 	call	0x26c	; 0x26c <DC_Start>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 30a:	2f ef       	ldi	r18, 0xFF	; 255
- 30c:	87 ea       	ldi	r24, 0xA7	; 167
- 30e:	91 e6       	ldi	r25, 0x61	; 97
- 310:	21 50       	subi	r18, 0x01	; 1
- 312:	80 40       	sbci	r24, 0x00	; 0
- 314:	90 40       	sbci	r25, 0x00	; 0
- 316:	e1 f7       	brne	.-8      	; 0x310 <main+0x14>
- 318:	00 c0       	rjmp	.+0      	; 0x31a <main+0x1e>
- 31a:	00 00       	nop
+ 32e:	2f ef       	ldi	r18, 0xFF	; 255
+ 330:	87 ea       	ldi	r24, 0xA7	; 167
+ 332:	91 e6       	ldi	r25, 0x61	; 97
+ 334:	21 50       	subi	r18, 0x01	; 1
+ 336:	80 40       	sbci	r24, 0x00	; 0
+ 338:	90 40       	sbci	r25, 0x00	; 0
+ 33a:	e1 f7       	brne	.-8      	; 0x334 <main+0x38>
+ 33c:	00 c0       	rjmp	.+0      	; 0x33e <main+0x42>
+ 33e:	00 00       	nop
 		_delay_ms(2000);
 		DC_Stop(motor1);
- 31c:	80 e0       	ldi	r24, 0x00	; 0
- 31e:	0e 94 cd 01 	call	0x39a	; 0x39a <DC_Stop>
- 322:	2f ef       	ldi	r18, 0xFF	; 255
- 324:	87 ea       	ldi	r24, 0xA7	; 167
- 326:	91 e6       	ldi	r25, 0x61	; 97
- 328:	21 50       	subi	r18, 0x01	; 1
- 32a:	80 40       	sbci	r24, 0x00	; 0
- 32c:	90 40       	sbci	r25, 0x00	; 0
- 32e:	e1 f7       	brne	.-8      	; 0x328 <main+0x2c>
- 330:	00 c0       	rjmp	.+0      	; 0x332 <main+0x36>
- 332:	00 00       	nop
+ 340:	80 e0       	ldi	r24, 0x00	; 0
+ 342:	0e 94 1b 02 	call	0x436	; 0x436 <DC_Stop>
+		ServoMotor_Rotate(angle_0);
+ 346:	86 eb       	ldi	r24, 0xB6	; 182
+ 348:	91 e0       	ldi	r25, 0x01	; 1
+ 34a:	0e 94 4e 02 	call	0x49c	; 0x49c <ServoMotor_Rotate>
+ 34e:	2f ef       	ldi	r18, 0xFF	; 255
+ 350:	87 ea       	ldi	r24, 0xA7	; 167
+ 352:	91 e6       	ldi	r25, 0x61	; 97
+ 354:	21 50       	subi	r18, 0x01	; 1
+ 356:	80 40       	sbci	r24, 0x00	; 0
+ 358:	90 40       	sbci	r25, 0x00	; 0
+ 35a:	e1 f7       	brne	.-8      	; 0x354 <main+0x58>
+ 35c:	00 c0       	rjmp	.+0      	; 0x35e <main+0x62>
+ 35e:	00 00       	nop
 		_delay_ms(2000);
 		DC_Start(motor1, DC_CCW);
- 334:	61 e0       	ldi	r22, 0x01	; 1
- 336:	80 e0       	ldi	r24, 0x00	; 0
- 338:	0e 94 36 01 	call	0x26c	; 0x26c <DC_Start>
- 33c:	2f ef       	ldi	r18, 0xFF	; 255
- 33e:	87 ea       	ldi	r24, 0xA7	; 167
- 340:	91 e6       	ldi	r25, 0x61	; 97
- 342:	21 50       	subi	r18, 0x01	; 1
- 344:	80 40       	sbci	r24, 0x00	; 0
- 346:	90 40       	sbci	r25, 0x00	; 0
- 348:	e1 f7       	brne	.-8      	; 0x342 <main+0x46>
- 34a:	00 c0       	rjmp	.+0      	; 0x34c <main+0x50>
- 34c:	00 00       	nop
- 34e:	d9 cf       	rjmp	.-78     	; 0x302 <main+0x6>
+ 360:	61 e0       	ldi	r22, 0x01	; 1
+ 362:	80 e0       	ldi	r24, 0x00	; 0
+ 364:	0e 94 36 01 	call	0x26c	; 0x26c <DC_Start>
+		ServoMotor_Rotate(angle_N90);
+ 368:	80 e3       	ldi	r24, 0x30	; 48
+ 36a:	92 e0       	ldi	r25, 0x02	; 2
+ 36c:	0e 94 4e 02 	call	0x49c	; 0x49c <ServoMotor_Rotate>
+ 370:	2f ef       	ldi	r18, 0xFF	; 255
+ 372:	87 ea       	ldi	r24, 0xA7	; 167
+ 374:	91 e6       	ldi	r25, 0x61	; 97
+ 376:	21 50       	subi	r18, 0x01	; 1
+ 378:	80 40       	sbci	r24, 0x00	; 0
+ 37a:	90 40       	sbci	r25, 0x00	; 0
+ 37c:	e1 f7       	brne	.-8      	; 0x376 <main+0x7a>
+ 37e:	00 c0       	rjmp	.+0      	; 0x380 <main+0x84>
+ 380:	00 00       	nop
+ 382:	c7 cf       	rjmp	.-114    	; 0x312 <main+0x16>
 
 Disassembly of section .text.DIO_SetPinDirection:
 
@@ -707,33 +885,107 @@ void DIO_SetPinValue(port Port, pin Pin, status Status)
  268:	82 bb       	out	0x12, r24	; 18
  26a:	08 95       	ret
 
+Disassembly of section .text.DIO_TogglePinValue:
+
+00000384 <DIO_TogglePinValue>:
+		break;
+	}
+}
+void DIO_TogglePinValue(port Port, pin Pin)
+{
+	switch (Port)
+ 384:	81 30       	cpi	r24, 0x01	; 1
+ 386:	89 f0       	breq	.+34     	; 0x3aa <DIO_TogglePinValue+0x26>
+ 388:	28 f0       	brcs	.+10     	; 0x394 <DIO_TogglePinValue+0x10>
+ 38a:	82 30       	cpi	r24, 0x02	; 2
+ 38c:	c9 f0       	breq	.+50     	; 0x3c0 <DIO_TogglePinValue+0x3c>
+ 38e:	83 30       	cpi	r24, 0x03	; 3
+ 390:	11 f1       	breq	.+68     	; 0x3d6 <DIO_TogglePinValue+0x52>
+ 392:	08 95       	ret
+	{
+		case DIO_PORTA:
+		TGL_BIT(PORTA, Pin);
+ 394:	2b b3       	in	r18, 0x1b	; 27
+ 396:	81 e0       	ldi	r24, 0x01	; 1
+ 398:	90 e0       	ldi	r25, 0x00	; 0
+ 39a:	02 c0       	rjmp	.+4      	; 0x3a0 <DIO_TogglePinValue+0x1c>
+ 39c:	88 0f       	add	r24, r24
+ 39e:	99 1f       	adc	r25, r25
+ 3a0:	6a 95       	dec	r22
+ 3a2:	e2 f7       	brpl	.-8      	; 0x39c <DIO_TogglePinValue+0x18>
+ 3a4:	82 27       	eor	r24, r18
+ 3a6:	8b bb       	out	0x1b, r24	; 27
+		break;
+ 3a8:	08 95       	ret
+		case DIO_PORTB:
+		TGL_BIT(PORTB, Pin);
+ 3aa:	28 b3       	in	r18, 0x18	; 24
+ 3ac:	81 e0       	ldi	r24, 0x01	; 1
+ 3ae:	90 e0       	ldi	r25, 0x00	; 0
+ 3b0:	02 c0       	rjmp	.+4      	; 0x3b6 <DIO_TogglePinValue+0x32>
+ 3b2:	88 0f       	add	r24, r24
+ 3b4:	99 1f       	adc	r25, r25
+ 3b6:	6a 95       	dec	r22
+ 3b8:	e2 f7       	brpl	.-8      	; 0x3b2 <DIO_TogglePinValue+0x2e>
+ 3ba:	82 27       	eor	r24, r18
+ 3bc:	88 bb       	out	0x18, r24	; 24
+		break;
+ 3be:	08 95       	ret
+		case DIO_PORTC:
+		TGL_BIT(PORTC, Pin);
+ 3c0:	25 b3       	in	r18, 0x15	; 21
+ 3c2:	81 e0       	ldi	r24, 0x01	; 1
+ 3c4:	90 e0       	ldi	r25, 0x00	; 0
+ 3c6:	02 c0       	rjmp	.+4      	; 0x3cc <DIO_TogglePinValue+0x48>
+ 3c8:	88 0f       	add	r24, r24
+ 3ca:	99 1f       	adc	r25, r25
+ 3cc:	6a 95       	dec	r22
+ 3ce:	e2 f7       	brpl	.-8      	; 0x3c8 <DIO_TogglePinValue+0x44>
+ 3d0:	82 27       	eor	r24, r18
+ 3d2:	85 bb       	out	0x15, r24	; 21
+		break;
+ 3d4:	08 95       	ret
+		case DIO_PORTD:
+		TGL_BIT(PORTD, Pin);
+ 3d6:	22 b3       	in	r18, 0x12	; 18
+ 3d8:	81 e0       	ldi	r24, 0x01	; 1
+ 3da:	90 e0       	ldi	r25, 0x00	; 0
+ 3dc:	02 c0       	rjmp	.+4      	; 0x3e2 <DIO_TogglePinValue+0x5e>
+ 3de:	88 0f       	add	r24, r24
+ 3e0:	99 1f       	adc	r25, r25
+ 3e2:	6a 95       	dec	r22
+ 3e4:	e2 f7       	brpl	.-8      	; 0x3de <DIO_TogglePinValue+0x5a>
+ 3e6:	82 27       	eor	r24, r18
+ 3e8:	82 bb       	out	0x12, r24	; 18
+ 3ea:	08 95       	ret
+
 Disassembly of section .text.__dummy_fini:
 
-00000402 <_fini>:
- 402:	08 95       	ret
+00000516 <_fini>:
+ 516:	08 95       	ret
 
 Disassembly of section .text.__dummy_funcs_on_exit:
 
-00000404 <__funcs_on_exit>:
- 404:	08 95       	ret
+00000518 <__funcs_on_exit>:
+ 518:	08 95       	ret
 
 Disassembly of section .text.__dummy_simulator_exit:
 
-00000406 <__simulator_exit>:
- 406:	08 95       	ret
+0000051a <__simulator_exit>:
+ 51a:	08 95       	ret
 
 Disassembly of section .text.exit:
 
-000003e4 <exit>:
- 3e4:	ec 01       	movw	r28, r24
- 3e6:	0e 94 02 02 	call	0x404	; 0x404 <__funcs_on_exit>
- 3ea:	0e 94 01 02 	call	0x402	; 0x402 <_fini>
- 3ee:	ce 01       	movw	r24, r28
- 3f0:	0e 94 03 02 	call	0x406	; 0x406 <__simulator_exit>
- 3f4:	ce 01       	movw	r24, r28
- 3f6:	0e 94 ff 01 	call	0x3fe	; 0x3fe <_Exit>
+000004b6 <exit>:
+ 4b6:	ec 01       	movw	r28, r24
+ 4b8:	0e 94 8c 02 	call	0x518	; 0x518 <__funcs_on_exit>
+ 4bc:	0e 94 8b 02 	call	0x516	; 0x516 <_fini>
+ 4c0:	ce 01       	movw	r24, r28
+ 4c2:	0e 94 8d 02 	call	0x51a	; 0x51a <__simulator_exit>
+ 4c6:	ce 01       	movw	r24, r28
+ 4c8:	0e 94 89 02 	call	0x512	; 0x512 <_Exit>
 
 Disassembly of section .text._Exit:
 
-000003fe <_Exit>:
- 3fe:	0e 94 52 00 	call	0xa4	; 0xa4 <_exit>
+00000512 <_Exit>:
+ 512:	0e 94 52 00 	call	0xa4	; 0xa4 <_exit>

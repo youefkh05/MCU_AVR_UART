@@ -8,6 +8,16 @@ HAL\EEPROM\EEPROM_Interface.c
 
 HAL\IO\LCD\LCD.c
 
+HAL\IO\LED\LED1\LED1_Interface.c
+
+HAL\IO\LED\LED2\LED2_Interface.c
+
+HAL\IO\LED\LED3\LED3_Interface.c
+
+HAL\IO\LED\LED4\LED4_Interface.c
+
+HAL\IO\LED\LED5\LED5_Interface.c
+
 HAL\IO\LM35_TMP_Sensor\LM35_TMP_Sensor_Interface.c
 
 HAL\IO\Motors\DC\DC_Interface.c

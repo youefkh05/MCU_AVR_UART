@@ -22,5 +22,5 @@ void ServoMotor_Initialize(void)
 void ServoMotor_Rotate(servo_angle angle)
 {
 	OCR1A=((ICR1+1)/4)-angle;
-	_delay_ms(1500);
+	//_delay_ms(1500);
 }

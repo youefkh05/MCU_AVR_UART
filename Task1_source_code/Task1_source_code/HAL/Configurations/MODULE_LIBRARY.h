@@ -21,5 +21,8 @@
 #include "Servo_Private.h"
 #include "EEPROM_Private.h"
 #include "LM35_TMP_Sensor_Private.h"
+#include "LED1_Private.h"
+#include "LED2_Private.h"
+#include "LED3_Private.h"
 
 #endif /* MODULE_LIBRARY_H_ */

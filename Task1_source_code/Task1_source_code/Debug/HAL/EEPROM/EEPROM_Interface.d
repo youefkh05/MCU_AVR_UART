@@ -37,7 +37,13 @@ HAL/EEPROM/EEPROM_Interface.d HAL/EEPROM/EEPROM_Interface.o: \
  ../HAL/IO/Motors/SERVO/Servo_Configurations.h \
  ../HAL/EEPROM/EEPROM_Private.h \
  ../HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Private.h \
- ../HAL/IO/LM35_TMP_Sensor/LM35_TMP_SENSOR_Configurations.h
+ ../HAL/IO/LM35_TMP_Sensor/LM35_TMP_SENSOR_Configurations.h \
+ ../HAL/IO/LED/LED1/LED1_Private.h \
+ ../HAL/IO/LED/LED1/LED1_Configuration.h \
+ ../HAL/IO/LED/LED2/LED2_Private.h \
+ ../HAL/IO/LED/LED2/LED2_Configuration.h \
+ ../HAL/IO/LED/LED3/LED3_Private.h \
+ ../HAL/IO/LED/LED3/LED3_Configuration.h
 
 ../HAL/EEPROM/EEPROM_Private.h:
 
@@ -132,3 +138,15 @@ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h:
 ../HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Private.h:
 
 ../HAL/IO/LM35_TMP_Sensor/LM35_TMP_SENSOR_Configurations.h:
+
+../HAL/IO/LED/LED1/LED1_Private.h:
+
+../HAL/IO/LED/LED1/LED1_Configuration.h:
+
+../HAL/IO/LED/LED2/LED2_Private.h:
+
+../HAL/IO/LED/LED2/LED2_Configuration.h:
+
+../HAL/IO/LED/LED3/LED3_Private.h:
+
+../HAL/IO/LED/LED3/LED3_Configuration.h:

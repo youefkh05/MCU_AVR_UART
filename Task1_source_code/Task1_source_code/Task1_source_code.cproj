@@ -112,6 +112,10 @@
       <Value>../MCAL/TWI</Value>
       <Value>../MCAL/UART</Value>
       <Value>../HAL/IO/LM35_TMP_Sensor</Value>
+      <Value>../HAL/IO/LED</Value>
+      <Value>../HAL/IO/LED/LED1</Value>
+      <Value>../HAL/IO/LED/LED2</Value>
+      <Value>../HAL/IO/LED/LED3</Value>
     </ListValues>
   </com.microchip.xc8.compiler.directories.IncludePaths>
   <com.microchip.xc8.compiler.optimization.level>Optimize debugging experience (-Og)</com.microchip.xc8.compiler.optimization.level>
@@ -156,7 +160,54 @@
     <Compile Include="HAL\IO\LCD\LCD.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\IO\LM35_TMP_Sensor\LM35_TMP_Sensor_Configurations.h" />
+    <Compile Include="HAL\IO\LED\LED1\LED1_Configuration.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LED\LED1\LED1_Interface.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LED\LED1\LED1_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LED\LED2\LED2_Configuration.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LED\LED2\LED2_Interface.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LED\LED2\LED2_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LED\LED3\LED3_Configuration.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LED\LED3\LED3_Interface.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LED\LED3\LED3_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LED\LED4\LED4_Configuration.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LED\LED4\LED4_Interface.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LED\LED4\LED4_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LED\LED5\LED5_Configuration.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LED\LED5\LED5_Interface.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LED\LED5\LED5_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\IO\LM35_TMP_Sensor\LM35_TMP_Sensor_Configurations.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\IO\LM35_TMP_Sensor\LM35_TMP_Sensor_Interface.c">
       <SubType>compile</SubType>
     </Compile>
@@ -283,6 +334,12 @@
     <Folder Include="HAL\EEPROM\" />
     <Folder Include="HAL\IO\" />
     <Folder Include="HAL\IO\LCD\" />
+    <Folder Include="HAL\IO\LED\" />
+    <Folder Include="HAL\IO\LED\LED1\" />
+    <Folder Include="HAL\IO\LED\LED2\" />
+    <Folder Include="HAL\IO\LED\LED3\" />
+    <Folder Include="HAL\IO\LED\LED4\" />
+    <Folder Include="HAL\IO\LED\LED5\" />
     <Folder Include="HAL\IO\LM35_TMP_Sensor\" />
     <Folder Include="HAL\IO\Motors\" />
     <Folder Include="HAL\IO\Motors\DC\" />
