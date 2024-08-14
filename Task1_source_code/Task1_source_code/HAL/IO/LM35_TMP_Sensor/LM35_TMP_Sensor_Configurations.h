@@ -11,7 +11,7 @@
 
 #include "PERIPHERAL_LIBRARY.h"
 
-typedef fint32_t temp;
+typedef uint16_t temp;
 // Renaming Pin
 #define TEMP_SEN_PIN    DIO_PIN0
 // Renaming Port

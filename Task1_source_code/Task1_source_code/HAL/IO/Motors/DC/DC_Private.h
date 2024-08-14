@@ -14,6 +14,8 @@
 void DC_Initialize(dc_motor motor);
 void DC_Start(dc_motor motor, dc_motor_direction direction);
 void DC_Stop(dc_motor motor);
+void DC_Change_Speed(dc_motor motor,uint16_t speed);
+
 
 
 

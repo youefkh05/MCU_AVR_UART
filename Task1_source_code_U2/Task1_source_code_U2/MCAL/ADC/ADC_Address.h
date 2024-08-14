@@ -1,14 +1,13 @@
 /*
  * ADC_Address.h
  *
- * Created: 10/7/2023 12:09:31 PM
+ * Created: 3/4/2024 11:47:30 PM
  *  Author: oraga
  */ 
 
 
 #ifndef ADC_ADDRESS_H_
 #define ADC_ADDRESS_H_
-#include "CPU_CONFIGURATIONS.h"
 
 /*
 #define ADMUX   (*(volatile uint8_t*)(0x27))
@@ -18,6 +17,7 @@
 #define SFIOR   (*(volatile uint8_t*)(0x50))
 */
 #define ADC_VAL (*(volatile uint16_t*)(0x24))
+
 
 
 

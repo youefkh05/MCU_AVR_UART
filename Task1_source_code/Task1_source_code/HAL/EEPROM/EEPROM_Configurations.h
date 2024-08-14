@@ -10,10 +10,10 @@
 #define EEPROM_CONFIGURATIONS_H_
 
 #include "PERIPHERAL_LIBRARY.h"
-
+ 
 //#define A2_CONNECTION			0
 	
-#define EEPROM_State_Add	0b01000000	//any place
+
 
 
 

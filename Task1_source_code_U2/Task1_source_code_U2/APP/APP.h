@@ -13,15 +13,9 @@
 #include "MODULE_LIBRARY.h"
 #include "math.h"
 
-//Ohm
-#define A_MUX_2 DIO_PIN4
-#define B_MUX_2 DIO_PIN5
-
-
-//volt and current
-#define A_MUX_3 DIO_PIN6
-#define B_MUX_3 DIO_PIN7
-
+/*	states messages	*/
+#define Emergency_Mes 300
+#define	Off_Mes		  255
 
 typedef enum
 {
@@ -30,15 +24,7 @@ typedef enum
 	Abnormal_state=2
 }E2PROM_State;
 
-/* E2PROM STATE	*/
-void Initialize_E2PROM_State(void);
-E2PROM_State Read_E2PROM_State (const uint8_t *EEPROM_Add); 		
-void Write_E2PROM_State(const uint8_t EEPROM_Add, E2PROM_State state);
-
-/*	Event handler	*/
-void handle_event(temp* T, E2PROM_State* S);
-void check_State(temp *T,E2PROM_State* S);
-void handle_State(temp *T,E2PROM_State* S);
+void handle_Temp(temp T, E2PROM_State* S);
 
 
 #endif /* APP_H_ */

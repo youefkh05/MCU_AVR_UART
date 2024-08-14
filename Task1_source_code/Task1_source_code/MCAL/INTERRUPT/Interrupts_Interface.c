@@ -8,9 +8,9 @@
 
 void External_Interrupt0_Initalize(int0_sense sense)
 {
-	// Define interrupt pin INT0 as input ????? ?????
-	CLR_BIT(DDRD,2); 
-	// Disable global interrupt while initialization (Apartment Door) arw2 el 42a
+	// Define interrupt pin INT0 as input 
+	CLR_BIT(DDRD,2);	
+	// Disable global interrupt while initialization 
 	cli();//Clear interrupt, CLR_BIT(SREG,7);
 	// Choose sensing method
 	switch(sense)
@@ -29,16 +29,16 @@ void External_Interrupt0_Initalize(int0_sense sense)
 		break;
 		
 	}
-	// Enable peripheral interrupt (Room door)
+	// Enable peripheral interrupt 
 	SET_BIT(GICR, INT0);
-	// Enable global interrupt after initialization (Apartment Door)
+	// Enable global interrupt after initialization 
 	sei();//Set interrupt, SET_BIT(SREG,7);
 }
 void External_Interrupt1_Initalize(int1_sense sense)
 {
-	// Define interrupt pin INT0 as input ????? ?????
+	// Define interrupt pin INT0 as input 
 	CLR_BIT(DDRD,3);
-	// Disable global interrupt while initialization (Apartment Door) arw2 el 42a
+	// Disable global interrupt while initialization 
 	cli();//Clear interrupt, CLR_BIT(SREG,7);
 	// Choose sensing method
 	switch(sense)
@@ -57,22 +57,22 @@ void External_Interrupt1_Initalize(int1_sense sense)
 		break;
 		
 	}
-	// Enable peripheral interrupt (Room door)
+	// Enable peripheral interrupt 
 	SET_BIT(GICR, INT0);
-	// Enable global interrupt after initialization (Apartment Door)
+	// Enable global interrupt after initialization 
 	sei();//Set interrupt, SET_BIT(SREG,7);
 }
 
 void External_Interrupt2_Initalize()
 {
-	// Define interrupt pin INT0 as input ????? ?????
+	// Define interrupt pin INT0 as input
 	CLR_BIT(DDRB,2);
-	// Disable global interrupt while initialization (Apartment Door) arw2 el 42a
+	// Disable global interrupt while initialization 
 	cli();//Clear interrupt, CLR_BIT(SREG,7);
 	CLR_BIT(GICR, INT2);
 	CLR_BIT(MCUCSR,ISC2);
 	// Enable peripheral interrupt (Room door)
 	SET_BIT(GICR, INT2);
-	// Enable global interrupt after initialization (Apartment Door)
+	// Enable global interrupt after initialization 
 	sei();//Set interrupt, SET_BIT(SREG,7);
 }

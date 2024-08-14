@@ -91,11 +91,35 @@ uart_status UART_Transmit_Character(uint8_t data)
 	while (((UCSRA>>TXC)&0x01) != 1);//Wait until flag of transmitting received
 	return UART_OK;
 }
+
 uart_status UART_Receive_Character(uint8_t* data)
 {
 	while (((UCSRA>>RXC)&0x01) != 1);//Wait until flag of receiving received
 	*data = UDR;
 	return UART_OK;
+}
+
+uart_status UART_Transmit_Word(uint16_t data){
+	uint8_t high_byte = (data >> 8) & 0xFF;
+	uint8_t low_byte = data & 0xFF;
+	uart_status s=UART_Transmit_Character(high_byte);
+	s|= UART_Transmit_Character(low_byte);
+	return s;
+
+}
+
+
+uart_status UART_Receive_Word(uint16_t* data){
+	uint8_t high_byte = 0;
+	uint8_t low_byte = 0;
+	uart_status s	=	UART_Receive_Character(&high_byte);
+	s	|=	UART_Receive_Character(&low_byte);
+	*data=Reassemble_uint16(high_byte,low_byte);
+	return s;
+}
+
+uint16_t Reassemble_uint16(uint8_t high_byte, uint8_t low_byte){
+	return ((uint16_t)high_byte << 8) | low_byte;
 }
 
 uart_status UART_Transmit_String(uint8_t* str)

@@ -1,40 +1,44 @@
 /*
  * main.c
  *
- * Created: 8/11/2024 6:15:39 PM
- *  Author: User
- */ 
+ * Created: 8/14/2024 10:20:44 AM
+ *  Author: youefkh05
+ */
 
 #include <xc.h>
 #include "main.h"
 
 // Global variables
-volatile E2PROM_State currentState =Normal_state;
 volatile uint8_t buttonPressed = 0;
-volatile temp temperature = 0;
+
 
 int main(void)
 {	
 	/*		Initializations		*/
-	dc_motor DC_fan1=DC_Motor1;
-	DC_Initialize(DC_fan1);
-	Initialize_E2PROM_State();
-	Initialize_TEMP_SENSOR();
-	DIO_SetPinDirection(BOT1_PORT,BOT1_PIN,DIO_INPUT); //push button 
+	LED1_Initialize();
+	LED2_Initialize();
+	LED3_Initialize();
+	uart_status UART_State= UART_Initialize_WithoutInterrupt(UART_9600,Synchronous, Disable , Bits_8, Bit_1);
+	if(UART_State==UART_NOK){
+		return 0;
+	}
 	
+
+	uint8_t UART_Rdata;
+	volatile E2PROM_State currentState =Normal_state;
 	/*
 	UART_Init();
 	Timer_Init();
 	*/
 	
-	// Read initial state from EEPROM
-	currentState = Read_E2PROM_State(EEPROM_State_Add);
+
 	
 	/*	Main	Code	*/
     while(1)
     {	
-		temperature=Read_TEMP_SENSOR();
-		
-		handle_event(&temperature,&currentState);
+	
+		UART_State= UART_Receive_Word(&UART_Rdata);
+		handle_Temp(UART_Rdata,&currentState);
+	
     }
 }

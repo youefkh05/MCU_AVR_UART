@@ -1,14 +1,16 @@
 /*
- * ADC_Configuration.h
+ * ADC_Configurations.h
  *
- * Created: 10/7/2023 12:09:48 PM
+ * Created: 3/4/2024 11:48:12 PM
  *  Author: oraga
  */ 
 
 
 #ifndef ADC_CONFIGURATION_H_
 #define ADC_CONFIGURATION_H_
+
 #include "ADC_Address.h"
+#include "CPU_CONFIGURATIONS.h"
 
 typedef enum
 {
