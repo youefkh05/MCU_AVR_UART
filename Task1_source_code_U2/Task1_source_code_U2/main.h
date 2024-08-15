@@ -8,7 +8,7 @@
 
 #ifndef MAIN_H_
 #define MAIN_H_
-#define F_CPU 8000000UL	
+
 #define BOT1_PORT	PORTB
 #define BOT1_PIN	DIO_PIN0
 

@@ -19,7 +19,7 @@ uint16_t ADC_Read(adc_channel channel)
 
 	// Clear the ADC result register by reading it once
 	uint16_t dummy = ADC_VAL;
-
+ 
 	// Select the ADC channel
 	switch (channel)
 	{

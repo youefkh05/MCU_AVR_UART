@@ -94,7 +94,9 @@ uart_status UART_Transmit_Character(uint8_t data)
 
 uart_status UART_Receive_Character(uint8_t* data)
 {
-	while (((UCSRA>>RXC)&0x01) != 1);//Wait until flag of receiving received
+	uint8_t x=0;
+	while (((UCSRA>>RXC)&0x01) != 1 && x<=250)
+		x++;//Wait until flag of receiving received
 	*data = UDR;
 	return UART_OK;
 }

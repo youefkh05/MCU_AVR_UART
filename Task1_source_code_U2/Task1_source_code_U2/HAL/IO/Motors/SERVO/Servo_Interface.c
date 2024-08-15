@@ -9,7 +9,7 @@
 
 void ServoMotor_Initialize(void)
 {
-	DDRD |= (1<<PD5);	/* Make OC1A pin as output */
+	DIO_SetPinDirection(SERVO_PORT, SERVO_PIN, DIO_OUTPUT);
 	TCNT1 = 0;			/* Set timer1 count zero */
 	ICR1 = 2499;		/* Set TOP count for timer1 in ICR1 register */
 

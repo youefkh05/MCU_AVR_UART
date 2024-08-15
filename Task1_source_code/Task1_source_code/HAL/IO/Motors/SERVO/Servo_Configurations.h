@@ -11,7 +11,8 @@
 
 #include "PERIPHERAL_LIBRARY.h"
 
-#define Servo
+#define SERVO_PORT PORTD
+#define SERVO_PIN  DIO_PIN5
 
 typedef enum
 {

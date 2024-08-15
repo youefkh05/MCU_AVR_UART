@@ -71,7 +71,7 @@ void External_Interrupt2_Initalize()
 	cli();//Clear interrupt, CLR_BIT(SREG,7);
 	CLR_BIT(GICR, INT2);
 	CLR_BIT(MCUCSR,ISC2);
-	// Enable peripheral interrupt (Room door)
+	// Enable peripheral interrupt 
 	SET_BIT(GICR, INT2);
 	// Enable global interrupt after initialization 
 	sei();//Set interrupt, SET_BIT(SREG,7);

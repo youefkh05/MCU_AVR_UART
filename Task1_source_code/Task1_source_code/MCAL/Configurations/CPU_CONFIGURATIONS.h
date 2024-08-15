@@ -11,7 +11,7 @@
 
 /*-----------------------------CPU CONFIGURATIONS-----------------------------*/
 #undef F_CPU               // Disable internal crystal
-#define F_CPU 16000000     // Enable external crystal
+#define F_CPU 8000000UL     // Enable external crystal
 #include <avr/io.h>        // Enable input/output registers
 #include <avr/interrupt.h> // Enable interrupts of AVR
 #include <util/delay.h>    // Enable delay functions

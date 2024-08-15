@@ -30,11 +30,11 @@ void Write_E2PROM_State( E2PROM_State state){
 }
 
 
-void handle_event(temp T,dc_motor DC_fan, E2PROM_State* S){
+void handle_event(temp T,dc_motor DC_fan,uint8_t Speed, E2PROM_State* S){
 	
 	/*	check the state	*/
 	check_State(T,S);
-	handle_State(T,DC_fan,S);
+	handle_State(T,DC_fan,Speed,S);
 }
 
 void check_State(temp T,E2PROM_State* S){
@@ -53,22 +53,18 @@ void check_State(temp T,E2PROM_State* S){
 	
 }
 
-void handle_State(temp T,dc_motor DC_fan,E2PROM_State* S){
+void handle_State(temp T,dc_motor DC_fan,uint8_t Speed,E2PROM_State* S){
 	switch (*S){
 		case Normal_state:
 			if(T<=20.0){
-				cli();	//As no need 
 				DC_Stop(DC_fan);
 			}
 			else if (T>20.0 && T<=40.0){
-				cli();	//As no need 
 				//increase fan speed
 				DC_Start(DC_fan,DC_CW);
-				DC_Change_Speed(DC_fan,T*4);
+				DC_Change_Speed(DC_fan,(temp)T*4*(Speed/250));
 			}
 			else if (T>40 &&T<=50) {
-				
-				sei();	//check the button
 				//max speed
 				DC_Start(DC_fan,DC_CW);
 				DC_Change_Speed(DC_fan,40*4);
@@ -98,5 +94,14 @@ void UART_Transmit_State(const temp T,uint8_t *bot1f){
 		/* Reset the flag	*/
 		*bot1f=0;
 		uart_status x=UART_Transmit_Word(T);
+	}
+}
+
+void UART_Receive_Speed(uint8_t* Speed){
+	uint8_t temp_Speed;
+	uart_status s	=	UART_Receive_Character(&temp_Speed); 
+	if (s==UART_OK)
+	{
+		*Speed=temp_Speed;
 	}
 }
