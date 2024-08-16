@@ -13,7 +13,7 @@ void handle_Mes(temp T,dc_motor DC_MOT, E2PROM_State* S){
 	LED1_OFF();
 	LED2_OFF();
 	LED3_OFF();
-	DC_Start(DC_MOT,DC_CW);
+	//DC_Start(DC_MOT,DC_CW);
 	
 	if(T<=20.0){
 		LED3_ON();
@@ -29,14 +29,15 @@ void handle_Mes(temp T,dc_motor DC_MOT, E2PROM_State* S){
 	else if (T==Off_Mes)
 	{
 		*S=Off_state;
-		LED1_OFF();
-		LED2_OFF();
-		LED3_OFF();
+		LED1_ON();
 		DC_Stop(DC_MOT);
 	}
 	else if (T==Emergency_Mes)
 	{
 		*S=Emergency_state;
+		LED1_ON();
+		LED2_ON();
+		LED3_ON();
 	}
 	else {
 		LED1_ON();

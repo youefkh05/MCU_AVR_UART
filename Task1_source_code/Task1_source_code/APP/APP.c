@@ -85,7 +85,14 @@ void handle_State(temp T,dc_motor DC_fan,uint8_t Speed,E2PROM_State* S){
 }
 
 void UART_Transmit_State(const temp T,uint8_t *bot1f){
-	if (T>40 && T<=50 && *bot1f==1)
+	if (T>=50)
+	{
+		/* Reset the flag	*/
+		*bot1f=0;
+		//send the emergency signal
+		uart_status x=UART_Transmit_Word(Emergency_Mes);
+	}
+	else if (T>40 && T<=50 && *bot1f==1)
 	{	
 		//send the off signal
 		uart_status x=UART_Transmit_Word(Off_Mes);

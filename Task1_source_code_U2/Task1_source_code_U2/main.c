@@ -7,7 +7,7 @@
 
 #include <xc.h>
 #include "main.h"
-
+	uint16_t speed=0;
 
 int main(void)
 {	
@@ -24,9 +24,9 @@ int main(void)
 	}
 	
 	//variables
-	uint16_t UART_Rdata;
+	uint16_t UART_Rdata=0;
 	volatile E2PROM_State currentState =Normal_state;
-	uint16_t speed=0;
+
 	/*
 	Timer_Init();
 	*/
@@ -42,10 +42,27 @@ int main(void)
 		
 		speed=ADC_Read(POT1_PIN);
 		
-		/* Send the message (Speed)	*/
+		DC_Change_Speed(DC_mach1,speed);
+		/*
+		//Send the message (Speed)	
 		UART_Transmit_Speed(speed);
+		*/
 		
 		/* Hnadle the message	*/
 		handle_Mes(UART_Rdata,DC_mach1,&currentState);
     }
 }
+
+/*
+ISR(USART_RXC_vect)
+{
+	//Read the data from buffer
+	if(highf==0)
+		high=UDR;
+	else
+		low=UDR;
+	//Clear the interrupt flag
+	UCSRA|=(1<<RXC);
+	highf=!highf;
+}
+*/

@@ -68,6 +68,7 @@ void DC_Stop(dc_motor motor)
 	switch(motor)
 	{
 		case DC_Motor1:
+		OCR0=0;
 		DIO_SetPinValue(DC_Enable_Port, DC_Enable1_Pin, DC_LOW);
 		DIO_SetPinValue(DC_Motor_Port, DC_Motor1_A1, DC_LOW);
 		DIO_SetPinValue(DC_Motor_Port, DC_Motor1_A2, DC_LOW);

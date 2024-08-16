@@ -13,7 +13,7 @@ volatile E2PROM_State currentState =Normal_state;
 volatile uint8_t buttonPressed = 0;
 volatile uint8_t y = 0;
 volatile uint8_t V = 0;
-uint8_t Speed_Scale=1;
+uint8_t Speed_Scale=250;
 
 
 
@@ -53,11 +53,12 @@ int main(void)
     {	
 		temperature=Read_TEMP_SENSOR();
 		
-		/* Send the message (Speed)	*/
+		/* Send the message (Temperature)	*/
 		UART_Transmit_State(temperature,&buttonPressed);
-		
-		/* Recieve the message (Speed)	*/
+		/*
+		//Recieve the message (Speed)	
 		UART_Receive_Speed(&Speed_Scale);
+		*/
 		V++;
 		handle_event(temperature,DC_fan1,Speed_Scale,&currentState);
 
