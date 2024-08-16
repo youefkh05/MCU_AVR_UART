@@ -10,8 +10,8 @@
 
 #include "PERIPHERAL_LIBRARY.h"
 
-#define DC_Enable_Port DIO_PORTB
-#define DC_Enable1_Pin DIO_PIN3
+#define DC_Enable_Port DIO_PORTD
+#define DC_Enable1_Pin DIO_PIN5
 #define DC_Enable2_Pin DIO_PIN2
 
 #define DC_Motor_Port DIO_PORTC

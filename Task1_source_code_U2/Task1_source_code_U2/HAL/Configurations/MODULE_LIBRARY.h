@@ -24,5 +24,6 @@
 #include "LED1_Private.h"
 #include "LED2_Private.h"
 #include "LED3_Private.h"
+#include "BUZZER_Private.h"
 
 #endif /* MODULE_LIBRARY_H_ */

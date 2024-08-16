@@ -6,6 +6,8 @@ APP\APP.c
 
 HAL\EEPROM\EEPROM_Interface.c
 
+HAL\IO\Buzzer\BUZZER_Interface.c
+
 HAL\IO\LCD\LCD.c
 
 HAL\IO\LED\LED1\LED1_Interface.c

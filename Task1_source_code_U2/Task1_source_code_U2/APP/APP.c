@@ -9,11 +9,11 @@
 
 void handle_Mes(temp T,dc_motor DC_MOT, E2PROM_State* S){
 	
-	// off all LED and on the mot for a 1ms
+	// off all LED and Buzzer
 	LED1_OFF();
 	LED2_OFF();
 	LED3_OFF();
-	//DC_Start(DC_MOT,DC_CW);
+	BUZZER_OFF();
 	
 	if(T<=20.0){
 		LED3_ON();
@@ -36,8 +36,7 @@ void handle_Mes(temp T,dc_motor DC_MOT, E2PROM_State* S){
 	{
 		*S=Emergency_state;
 		LED1_ON();
-		LED2_ON();
-		LED3_ON();
+		BUZZER_ON();
 	}
 	else {
 		LED1_ON();

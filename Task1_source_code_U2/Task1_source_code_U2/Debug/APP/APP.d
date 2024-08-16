@@ -43,7 +43,9 @@ APP/APP.d APP/APP.o: ../APP/APP.c ../APP/APP.h \
  ../HAL/IO/LED/LED2/LED2_Private.h \
  ../HAL/IO/LED/LED2/LED2_Configuration.h \
  ../HAL/IO/LED/LED3/LED3_Private.h \
- ../HAL/IO/LED/LED3/LED3_Configuration.h
+ ../HAL/IO/LED/LED3/LED3_Configuration.h \
+ ../HAL/IO/Buzzer/BUZZER_Private.h \
+ ../HAL/IO/Buzzer/BUZZER_Configuration.h
 
 ../APP/APP.h:
 
@@ -154,3 +156,7 @@ c:\program\ files\microchip\xc8\v2.36\avr\lib\gcc\avr\5.4.0\include\stddef.h:
 ../HAL/IO/LED/LED3/LED3_Private.h:
 
 ../HAL/IO/LED/LED3/LED3_Configuration.h:
+
+../HAL/IO/Buzzer/BUZZER_Private.h:
+
+../HAL/IO/Buzzer/BUZZER_Configuration.h:

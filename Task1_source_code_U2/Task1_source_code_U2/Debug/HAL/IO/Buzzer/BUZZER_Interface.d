@@ -1,6 +1,6 @@
-HAL/EEPROM/EEPROM_Interface.d HAL/EEPROM/EEPROM_Interface.o: \
- ../HAL/EEPROM/EEPROM_Interface.c ../HAL/EEPROM/EEPROM_Private.h \
- ../HAL/EEPROM/EEPROM_Configurations.h \
+HAL/IO/Buzzer/BUZZER_Interface.d HAL/IO/Buzzer/BUZZER_Interface.o: \
+ ../HAL/IO/Buzzer/BUZZER_Interface.c ../HAL/IO/Buzzer/BUZZER_Private.h \
+ ../HAL/IO/Buzzer/BUZZER_Configuration.h \
  ../MCAL/Configurations/PERIPHERAL_LIBRARY.h \
  ../MCAL/Configurations/CPU_CONFIGURATIONS.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\io.h \
@@ -29,29 +29,11 @@ HAL/EEPROM/EEPROM_Interface.d HAL/EEPROM/EEPROM_Interface.o: \
  ../MCAL/ADC/ADC_Configuration.h ../MCAL/ADC/ADC_Address.h \
  ../MCAL/Timer0/Timer0_Private.h ../MCAL/Timer0/Timer0_Configuration.h \
  ../MCAL/UART/UART_Private.h ../MCAL/UART/UART_Configurations.h \
- ../MCAL/TWI/TWI_Private.h ../MCAL/TWI/TWI_CONFIG.h \
- ../HAL/Configurations/MODULE_LIBRARY.h ../HAL/IO/LCD/I2C_LCD_PRIVATE.h \
- ../HAL/IO/LCD/I2C_LCD_INTERFACE.h ../HAL/IO/Motors/DC/DC_Private.h \
- ../HAL/IO/Motors/DC/DC_Configurations.h \
- ../HAL/IO/Motors/SERVO/Servo_Private.h \
- ../HAL/IO/Motors/SERVO/Servo_Configurations.h \
- ../HAL/EEPROM/EEPROM_Private.h \
- ../HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Private.h \
- ../HAL/IO/LM35_TMP_Sensor/LM35_TMP_SENSOR_Configurations.h \
- ../HAL/IO/LED/LED1/LED1_Private.h \
- ../HAL/IO/LED/LED1/LED1_Configuration.h \
- ../HAL/IO/LED/LED2/LED2_Private.h \
- ../HAL/IO/LED/LED2/LED2_Configuration.h \
- ../HAL/IO/LED/LED3/LED3_Private.h \
- ../HAL/IO/LED/LED3/LED3_Configuration.h \
- ../HAL/IO/Buzzer/BUZZER_Private.h \
- ../HAL/IO/Buzzer/BUZZER_Configuration.h \
- c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\eeprom.h \
- c:\program\ files\microchip\xc8\v2.36\avr\lib\gcc\avr\5.4.0\include\stddef.h
+ ../MCAL/TWI/TWI_Private.h ../MCAL/TWI/TWI_CONFIG.h
 
-../HAL/EEPROM/EEPROM_Private.h:
+../HAL/IO/Buzzer/BUZZER_Private.h:
 
-../HAL/EEPROM/EEPROM_Configurations.h:
+../HAL/IO/Buzzer/BUZZER_Configuration.h:
 
 ../MCAL/Configurations/PERIPHERAL_LIBRARY.h:
 
@@ -122,43 +104,3 @@ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h:
 ../MCAL/TWI/TWI_Private.h:
 
 ../MCAL/TWI/TWI_CONFIG.h:
-
-../HAL/Configurations/MODULE_LIBRARY.h:
-
-../HAL/IO/LCD/I2C_LCD_PRIVATE.h:
-
-../HAL/IO/LCD/I2C_LCD_INTERFACE.h:
-
-../HAL/IO/Motors/DC/DC_Private.h:
-
-../HAL/IO/Motors/DC/DC_Configurations.h:
-
-../HAL/IO/Motors/SERVO/Servo_Private.h:
-
-../HAL/IO/Motors/SERVO/Servo_Configurations.h:
-
-../HAL/EEPROM/EEPROM_Private.h:
-
-../HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Private.h:
-
-../HAL/IO/LM35_TMP_Sensor/LM35_TMP_SENSOR_Configurations.h:
-
-../HAL/IO/LED/LED1/LED1_Private.h:
-
-../HAL/IO/LED/LED1/LED1_Configuration.h:
-
-../HAL/IO/LED/LED2/LED2_Private.h:
-
-../HAL/IO/LED/LED2/LED2_Configuration.h:
-
-../HAL/IO/LED/LED3/LED3_Private.h:
-
-../HAL/IO/LED/LED3/LED3_Configuration.h:
-
-../HAL/IO/Buzzer/BUZZER_Private.h:
-
-../HAL/IO/Buzzer/BUZZER_Configuration.h:
-
-c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\eeprom.h:
-
-c:\program\ files\microchip\xc8\v2.36\avr\lib\gcc\avr\5.4.0\include\stddef.h:

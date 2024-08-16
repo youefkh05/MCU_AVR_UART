@@ -19,8 +19,11 @@
 #define BOT1_PIN	DIO_PIN0
 
 /*	states messages	*/
-#define Emergency_Mes 300
-#define	Off_Mes		  255	
+#define	Abnormal_Mes			350	
+#define Emergency_Mes			300
+#define	Off_Mes					255
+#define Emergency_counter_max	14
+		
 
 
 
@@ -38,12 +41,12 @@ uint8_t Read_E2PROM_State (void);
 void Write_E2PROM_State( E2PROM_State state);
 
 /*	Event handler	*/
-void handle_event(temp T,dc_motor DC_fan,uint8_t Speed, E2PROM_State* S);
-void handle_State(temp T,dc_motor DC_fan,uint8_t Speed,E2PROM_State* S);
-void check_State(temp T,E2PROM_State* S);
+void handle_event(temp T,uint8_t counter,dc_motor DC_fan,uint8_t Speed, E2PROM_State* S,uint8_t* reset);
+void handle_State(temp T,dc_motor DC_fan,uint8_t Speed,E2PROM_State* S,uint8_t* reset);
+void check_State(temp T,uint8_t counter,E2PROM_State* S);
 
 /*	Sender	*/
-void UART_Transmit_State(const temp T,uint8_t *bot1f);
+void UART_Transmit_State(const temp T,uint8_t counter,uint8_t *bot1f);
 
 /* Reciever	*/
 void UART_Receive_Speed(uint8_t* Speed);

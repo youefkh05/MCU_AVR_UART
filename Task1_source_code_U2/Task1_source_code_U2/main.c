@@ -17,6 +17,7 @@ int main(void)
 	LED1_Initialize();
 	LED2_Initialize();
 	LED3_Initialize();
+	BUZZER_Initialize();
 	ADC_Initialize(5, 1024);
 	uart_status UART_State= UART_Initialize_WithoutInterrupt(UART_9600,Synchronous, Disable , Bits_8, Bit_1);
 	if(UART_State==UART_NOK){

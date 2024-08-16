@@ -17,12 +17,9 @@
 #define POT1_PORT	PORTA
 #define POT1_PIN	DIO_PIN0
 
-//Buzzer1
-#define BUZZ1_PORT	PORTB
-#define BUZZ1_PIN	DIO_PIN2
-
 
 /*	states messages	*/
+#define	Abnormal_Mes  350	
 #define Emergency_Mes 300
 #define	Off_Mes		  255
 

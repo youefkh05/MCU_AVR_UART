@@ -13,6 +13,8 @@ volatile E2PROM_State currentState =Normal_state;
 volatile uint8_t buttonPressed = 0;
 volatile uint8_t y = 0;
 volatile uint8_t V = 0;
+volatile uint8_t overflow_count=0;
+volatile uint8_t temp_counter=0;
 uint8_t Speed_Scale=250;
 
 
@@ -27,6 +29,7 @@ int main(void)
 	Initialize_TEMP_SENSOR();
 	ADC_Initialize(5,1024);
 	DIO_SetPinDirection(BOT1_PORT,BOT1_PIN,DIO_INPUT); //push button 
+	Timer0_OVF_WithInterrupt_Initialize();
 	
 	uart_status UART_State= UART_Initialize_WithoutInterrupt(UART_9600,Synchronous, Disable , Bits_8, Bit_1);
 	if(UART_State==UART_NOK){
@@ -36,6 +39,7 @@ int main(void)
 	External_Interrupt0_Initalize(INT0_RISING);
 	
 	/*	Varibales	*/
+	uint8_t reset=0;
 	/*
 	Timer_Init();
 	*/
@@ -54,21 +58,38 @@ int main(void)
 		temperature=Read_TEMP_SENSOR();
 		
 		/* Send the message (Temperature)	*/
-		UART_Transmit_State(temperature,&buttonPressed);
+		UART_Transmit_State(temperature,temp_counter,&buttonPressed);
 		/*
 		//Recieve the message (Speed)	
 		UART_Receive_Speed(&Speed_Scale);
 		*/
 		V++;
-		handle_event(temperature,DC_fan1,Speed_Scale,&currentState);
-
-    }
+		handle_event(temperature,temp_counter,DC_fan1,Speed_Scale,&currentState,&reset);
+		if(reset==1){
+			//Watch dog
+			
+		}
+	}
 }
 
 /*	Interrupt Service Routine for INT0 (bot1)	 */
 ISR(INT0_vect)
 {
-	 y++;
-	 buttonPressed = 1;		/* Set the flag */
+	y++;
+	buttonPressed = 1;		/* Set the flag */
 	_delay_ms(50);  	/* Software debouncing control delay */
+}
+
+ISR(TIMER0_OVF_vect){
+	
+	overflow_count++;
+	if (overflow_count >= 16) {
+		overflow_count = 0;
+
+		// check the temperature
+		if(Read_TEMP_SENSOR()>=50){
+			temp_counter++;
+		}
+	}
+
 }
