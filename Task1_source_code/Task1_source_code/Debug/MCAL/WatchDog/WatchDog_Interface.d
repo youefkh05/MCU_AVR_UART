@@ -1,5 +1,6 @@
-MCAL/TWI/TWI.d MCAL/TWI/TWI.o: ../MCAL/TWI/TWI.c \
- ../MCAL/TWI/TWI_PRIVATE.h ../MCAL/TWI/TWI_CONFIG.h \
+MCAL/WatchDog/WatchDog_Interface.d MCAL/WatchDog/WatchDog_Interface.o: \
+ ../MCAL/WatchDog/WatchDog_Interface.c ../MCAL/Timer0/Timer0_Private.h \
+ ../MCAL/Timer0/Timer0_Configuration.h \
  ../MCAL/Configurations/CPU_CONFIGURATIONS.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\io.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\sfr_defs.h \
@@ -19,11 +20,11 @@ MCAL/TWI/TWI.d MCAL/TWI/TWI.o: ../MCAL/TWI/TWI.c \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h \
  ../MCAL/Configurations/BIT_MATH.h \
- ../MCAL/Configurations/STANDARD_TYPES.h ../MCAL/TWI/TWI_INTERFACE.h
+ ../MCAL/Configurations/STANDARD_TYPES.h
 
-../MCAL/TWI/TWI_PRIVATE.h:
+../MCAL/Timer0/Timer0_Private.h:
 
-../MCAL/TWI/TWI_CONFIG.h:
+../MCAL/Timer0/Timer0_Configuration.h:
 
 ../MCAL/Configurations/CPU_CONFIGURATIONS.h:
 
@@ -64,5 +65,3 @@ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h:
 ../MCAL/Configurations/BIT_MATH.h:
 
 ../MCAL/Configurations/STANDARD_TYPES.h:
-
-../MCAL/TWI/TWI_INTERFACE.h:

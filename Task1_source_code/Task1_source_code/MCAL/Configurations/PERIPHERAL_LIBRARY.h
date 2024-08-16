@@ -15,7 +15,7 @@
 #include "ADC_Private.h"
 #include "Timer0_Private.h"
 #include "UART_Private.h"
-#include "TWI_Private.h"
+#include "WatchDog_Private.h"
 
 
 #endif /* PERIPHERAL_LIBRARY_H_ */

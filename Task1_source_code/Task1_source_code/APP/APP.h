@@ -41,9 +41,9 @@ uint8_t Read_E2PROM_State (void);
 void Write_E2PROM_State( E2PROM_State state);
 
 /*	Event handler	*/
-void handle_event(temp T,uint8_t counter,dc_motor DC_fan,uint8_t Speed, E2PROM_State* S,uint8_t* reset);
+void handle_event(temp T,uint8_t *counter,dc_motor DC_fan,uint8_t Speed, E2PROM_State* S,uint8_t* reset);
 void handle_State(temp T,dc_motor DC_fan,uint8_t Speed,E2PROM_State* S,uint8_t* reset);
-void check_State(temp T,uint8_t counter,E2PROM_State* S);
+void check_State(temp T,uint8_t *counter,E2PROM_State* S);
 
 /*	Sender	*/
 void UART_Transmit_State(const temp T,uint8_t counter,uint8_t *bot1f);

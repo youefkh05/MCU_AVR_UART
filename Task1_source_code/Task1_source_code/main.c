@@ -11,18 +11,20 @@
 // Global variables
 volatile E2PROM_State currentState =Normal_state;
 volatile uint8_t buttonPressed = 0;
-volatile uint8_t y = 0;
-volatile uint8_t V = 0;
 volatile uint8_t overflow_count=0;
+/*	Variables	(local but global to debugg)*/
+uint8_t reset=0;
+volatile uint8_t bot1_intur=0;
 volatile uint8_t temp_counter=0;
+volatile temp temperature=0;
 uint8_t Speed_Scale=250;
+
 
 
 
 int main(void)
 {	
 	/*		Initializations		*/
-	temp temperature=0;
 	dc_motor DC_fan1=DC_Motor1;
 	DC_Initialize(DC_fan1);
 	Initialize_E2PROM_State();
@@ -38,11 +40,7 @@ int main(void)
 
 	External_Interrupt0_Initalize(INT0_RISING);
 	
-	/*	Varibales	*/
-	uint8_t reset=0;
-	/*
-	Timer_Init();
-	*/
+
 	
 	// Read initial state from EEPROM
 	uint8_t x= Read_E2PROM_State();
@@ -59,23 +57,27 @@ int main(void)
 		
 		/* Send the message (Temperature)	*/
 		UART_Transmit_State(temperature,temp_counter,&buttonPressed);
+		
 		/*
 		//Recieve the message (Speed)	
 		UART_Receive_Speed(&Speed_Scale);
 		*/
-		V++;
-		handle_event(temperature,temp_counter,DC_fan1,Speed_Scale,&currentState,&reset);
+		
+		handle_event(temperature,&temp_counter,DC_fan1,Speed_Scale,&currentState,&reset);
+		
+		//check if need reset
 		if(reset==1){
 			//Watch dog
-			
+			WDT_ON();
 		}
+		
 	}
 }
 
 /*	Interrupt Service Routine for INT0 (bot1)	 */
 ISR(INT0_vect)
 {
-	y++;
+	bot1_intur++;
 	buttonPressed = 1;		/* Set the flag */
 	_delay_ms(50);  	/* Software debouncing control delay */
 }

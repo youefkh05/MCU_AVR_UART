@@ -23,15 +23,10 @@ HAL/EEPROM/EEPROM_Interface.d HAL/EEPROM/EEPROM_Interface.o: \
  ../MCAL/Configurations/BIT_MATH.h \
  ../MCAL/Configurations/STANDARD_TYPES.h ../MCAL/DIO/DIO_Private.h \
  ../MCAL/DIO/DIO_Configuration.h \
- ../MCAL/Configurations/CPU_CONFIGURATIONS.h \
- ../MCAL/INTERRUPT/Interrupt_Private.h \
- ../MCAL/INTERRUPT/Interrupts_Configuration.h ../MCAL/ADC/ADC_Private.h \
+ ../MCAL/Configurations/CPU_CONFIGURATIONS.h ../MCAL/ADC/ADC_Private.h \
  ../MCAL/ADC/ADC_Configuration.h ../MCAL/ADC/ADC_Address.h \
- ../MCAL/Timer0/Timer0_Private.h ../MCAL/Timer0/Timer0_Configuration.h \
  ../MCAL/UART/UART_Private.h ../MCAL/UART/UART_Configurations.h \
- ../MCAL/TWI/TWI_Private.h ../MCAL/TWI/TWI_CONFIG.h \
- ../HAL/Configurations/MODULE_LIBRARY.h ../HAL/IO/LCD/I2C_LCD_PRIVATE.h \
- ../HAL/IO/LCD/I2C_LCD_INTERFACE.h ../HAL/IO/Motors/DC/DC_Private.h \
+ ../HAL/Configurations/MODULE_LIBRARY.h ../HAL/IO/Motors/DC/DC_Private.h \
  ../HAL/IO/Motors/DC/DC_Configurations.h \
  ../HAL/IO/Motors/SERVO/Servo_Private.h \
  ../HAL/IO/Motors/SERVO/Servo_Configurations.h \
@@ -101,33 +96,17 @@ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h:
 
 ../MCAL/Configurations/CPU_CONFIGURATIONS.h:
 
-../MCAL/INTERRUPT/Interrupt_Private.h:
-
-../MCAL/INTERRUPT/Interrupts_Configuration.h:
-
 ../MCAL/ADC/ADC_Private.h:
 
 ../MCAL/ADC/ADC_Configuration.h:
 
 ../MCAL/ADC/ADC_Address.h:
 
-../MCAL/Timer0/Timer0_Private.h:
-
-../MCAL/Timer0/Timer0_Configuration.h:
-
 ../MCAL/UART/UART_Private.h:
 
 ../MCAL/UART/UART_Configurations.h:
 
-../MCAL/TWI/TWI_Private.h:
-
-../MCAL/TWI/TWI_CONFIG.h:
-
 ../HAL/Configurations/MODULE_LIBRARY.h:
-
-../HAL/IO/LCD/I2C_LCD_PRIVATE.h:
-
-../HAL/IO/LCD/I2C_LCD_INTERFACE.h:
 
 ../HAL/IO/Motors/DC/DC_Private.h:
 

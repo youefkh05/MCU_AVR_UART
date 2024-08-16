@@ -12,9 +12,9 @@
 #include "PERIPHERAL_LIBRARY.h"
 
 // Renaming Pin
-#define LED4_PIN    DIO_PIN3
+#define LED4_PIN    DIO_PIN4
 // Renaming Port
-#define LED4_PORT   DIO_PORTD
+#define LED4_PORT   DIO_PORTB
 // Renaming Status
 #define LED4_LOW    DIO_LOW
 // Renaming Status

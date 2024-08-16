@@ -16,13 +16,10 @@
 #include "LED4_Private.h"
 #include "LED5_Private.h"
 */
-#include "I2C_LCD_PRIVATE.h"
+
 #include "DC_Private.h"
-#include "Servo_Private.h"
 #include "EEPROM_Private.h"
 #include "LM35_TMP_Sensor_Private.h"
-#include "LED1_Private.h"
-#include "LED2_Private.h"
-#include "LED3_Private.h"
+
 
 #endif /* MODULE_LIBRARY_H_ */

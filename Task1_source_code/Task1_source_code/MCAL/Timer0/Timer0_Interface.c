@@ -11,7 +11,6 @@ uint32_t Overflow_Cycle = 0, CTC_Cycle = 0;
 void Timer0_OVF_WithoutInterrupt_Initialize(void)
 {
 	
-	(TCCR0, PWM0);
 	CLR_BIT(TCCR0, CTC0);
 	CLR_BIT(TCCR0, COM00);
 	CLR_BIT(TCCR0, COM01);

@@ -7,16 +7,23 @@
 
 #include <xc.h>
 #include "main.h"
-	uint16_t speed=0;
+
+//variables (LOCAL But golbal to debugg)
+uint16_t UART_Rdata=0;
+volatile E2PROM_State currentState =Normal_state;
+uint16_t speed=0;
 
 int main(void)
 {	
 	/*		Initializations		*/
+	
 	dc_motor DC_mach1=DC_Motor1;
 	DC_Initialize(DC_mach1);
+	ServoMotor_Initialize();
 	LED1_Initialize();
 	LED2_Initialize();
 	LED3_Initialize();
+	//LED4_Initialize();
 	BUZZER_Initialize();
 	ADC_Initialize(5, 1024);
 	uart_status UART_State= UART_Initialize_WithoutInterrupt(UART_9600,Synchronous, Disable , Bits_8, Bit_1);
@@ -24,16 +31,13 @@ int main(void)
 		return 0;
 	}
 	
-	//variables
-	uint16_t UART_Rdata=0;
-	volatile E2PROM_State currentState =Normal_state;
-
-	/*
-	Timer_Init();
-	*/
+	
+	
 	
 	//Start the machine
+	ServoMotor_Rotate(angle_0);
 	DC_Start(DC_mach1,DC_CW);
+
 	
 	/*	Main	Code	*/
     while(1)
@@ -49,7 +53,7 @@ int main(void)
 		UART_Transmit_Speed(speed);
 		*/
 		
-		/* Hnadle the message	*/
+		/* Handle the message	*/
 		handle_Mes(UART_Rdata,DC_mach1,&currentState);
     }
 }

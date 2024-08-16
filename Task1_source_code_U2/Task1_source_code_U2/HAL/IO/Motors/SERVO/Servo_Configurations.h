@@ -17,7 +17,7 @@
 typedef enum
 {
 	angle_0 = 438,
-	angle_P90 = 325,
+	angle_P90 = 300,
 	angle_N90 = 560
 }servo_angle;
 

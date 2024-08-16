@@ -6,23 +6,9 @@ APP\APP.c
 
 HAL\EEPROM\EEPROM_Interface.c
 
-HAL\IO\LCD\LCD.c
-
-HAL\IO\LED\LED1\LED1_Interface.c
-
-HAL\IO\LED\LED2\LED2_Interface.c
-
-HAL\IO\LED\LED3\LED3_Interface.c
-
-HAL\IO\LED\LED4\LED4_Interface.c
-
-HAL\IO\LED\LED5\LED5_Interface.c
-
 HAL\IO\LM35_TMP_Sensor\LM35_TMP_Sensor_Interface.c
 
 HAL\IO\Motors\DC\DC_Interface.c
-
-HAL\IO\Motors\SERVO\Servo_Interface.c
 
 main.c
 
@@ -34,7 +20,7 @@ MCAL\INTERRUPT\Interrupts_Interface.c
 
 MCAL\Timer0\Timer0_Interface.c
 
-MCAL\TWI\TWI.c
-
 MCAL\UART\UART_Interface.c
+
+MCAL\WatchDog\WatchDog_Interface.c
 

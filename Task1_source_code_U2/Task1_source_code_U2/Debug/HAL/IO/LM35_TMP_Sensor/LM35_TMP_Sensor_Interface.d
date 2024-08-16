@@ -25,13 +25,9 @@ HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Interface.d \
  ../MCAL/Configurations/BIT_MATH.h \
  ../MCAL/Configurations/STANDARD_TYPES.h ../MCAL/DIO/DIO_Private.h \
  ../MCAL/DIO/DIO_Configuration.h \
- ../MCAL/Configurations/CPU_CONFIGURATIONS.h \
- ../MCAL/INTERRUPT/Interrupt_Private.h \
- ../MCAL/INTERRUPT/Interrupts_Configuration.h ../MCAL/ADC/ADC_Private.h \
+ ../MCAL/Configurations/CPU_CONFIGURATIONS.h ../MCAL/ADC/ADC_Private.h \
  ../MCAL/ADC/ADC_Configuration.h ../MCAL/ADC/ADC_Address.h \
- ../MCAL/Timer0/Timer0_Private.h ../MCAL/Timer0/Timer0_Configuration.h \
- ../MCAL/UART/UART_Private.h ../MCAL/UART/UART_Configurations.h \
- ../MCAL/TWI/TWI_Private.h ../MCAL/TWI/TWI_CONFIG.h
+ ../MCAL/UART/UART_Private.h ../MCAL/UART/UART_Configurations.h
 
 ../HAL/IO/LM35_TMP_Sensor/LM35_TMP_Sensor_Private.h:
 
@@ -85,24 +81,12 @@ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h:
 
 ../MCAL/Configurations/CPU_CONFIGURATIONS.h:
 
-../MCAL/INTERRUPT/Interrupt_Private.h:
-
-../MCAL/INTERRUPT/Interrupts_Configuration.h:
-
 ../MCAL/ADC/ADC_Private.h:
 
 ../MCAL/ADC/ADC_Configuration.h:
 
 ../MCAL/ADC/ADC_Address.h:
 
-../MCAL/Timer0/Timer0_Private.h:
-
-../MCAL/Timer0/Timer0_Configuration.h:
-
 ../MCAL/UART/UART_Private.h:
 
 ../MCAL/UART/UART_Configurations.h:
-
-../MCAL/TWI/TWI_Private.h:
-
-../MCAL/TWI/TWI_CONFIG.h:

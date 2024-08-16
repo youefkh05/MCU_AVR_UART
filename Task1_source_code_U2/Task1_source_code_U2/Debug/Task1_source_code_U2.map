@@ -194,19 +194,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 HAL/IO/Motors/SERVO/Servo_Interface.o
  .data          0x0000000000000000        0x0 HAL/IO/Motors/SERVO/Servo_Interface.o
  .bss           0x0000000000000000        0x0 HAL/IO/Motors/SERVO/Servo_Interface.o
- .text.ServoMotor_Initialize
-                0x0000000000000000       0x20 HAL/IO/Motors/SERVO/Servo_Interface.o
- .text.ServoMotor_Rotate
-                0x0000000000000000       0x1a HAL/IO/Motors/SERVO/Servo_Interface.o
- .debug_info    0x0000000000000000      0x3f2 HAL/IO/Motors/SERVO/Servo_Interface.o
- .debug_abbrev  0x0000000000000000       0xa1 HAL/IO/Motors/SERVO/Servo_Interface.o
- .debug_aranges
-                0x0000000000000000       0x28 HAL/IO/Motors/SERVO/Servo_Interface.o
- .debug_ranges  0x0000000000000000       0x18 HAL/IO/Motors/SERVO/Servo_Interface.o
- .debug_line    0x0000000000000000      0x120 HAL/IO/Motors/SERVO/Servo_Interface.o
- .debug_str     0x0000000000000000       0x14 HAL/IO/Motors/SERVO/Servo_Interface.o
- .comment       0x0000000000000000       0x30 HAL/IO/Motors/SERVO/Servo_Interface.o
- .debug_frame   0x0000000000000000       0x34 HAL/IO/Motors/SERVO/Servo_Interface.o
  .text          0x0000000000000000        0x0 main.o
  .data          0x0000000000000000        0x0 main.o
  .bss           0x0000000000000000        0x0 main.o
@@ -1012,6 +999,7 @@ END GROUP
  .comment       0x000000000000002f       0x30 HAL/IO/LED/LED2/LED2_Interface.o
  .comment       0x000000000000002f       0x30 HAL/IO/LED/LED3/LED3_Interface.o
  .comment       0x000000000000002f       0x30 HAL/IO/Motors/DC/DC_Interface.o
+ .comment       0x000000000000002f       0x30 HAL/IO/Motors/SERVO/Servo_Interface.o
  .comment       0x000000000000002f       0x30 main.o
  .comment       0x000000000000002f       0x30 MCAL/ADC/ADC_Interface.o
  .comment       0x000000000000002f       0x30 MCAL/DIO/DIO_Interface.o
@@ -1070,7 +1058,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x250
+.debug_aranges  0x0000000000000000      0x278
  *(.debug_aranges)
  .debug_aranges
                 0x0000000000000000       0x28 APP/APP.o
@@ -1085,60 +1073,65 @@ END GROUP
  .debug_aranges
                 0x0000000000000108       0x38 HAL/IO/Motors/DC/DC_Interface.o
  .debug_aranges
-                0x0000000000000140       0x20 main.o
+                0x0000000000000140       0x28 HAL/IO/Motors/SERVO/Servo_Interface.o
  .debug_aranges
-                0x0000000000000160       0x28 MCAL/ADC/ADC_Interface.o
+                0x0000000000000168       0x20 main.o
  .debug_aranges
-                0x0000000000000188       0x68 MCAL/DIO/DIO_Interface.o
+                0x0000000000000188       0x28 MCAL/ADC/ADC_Interface.o
  .debug_aranges
-                0x00000000000001f0       0x60 MCAL/UART/UART_Interface.o
+                0x00000000000001b0       0x68 MCAL/DIO/DIO_Interface.o
+ .debug_aranges
+                0x0000000000000218       0x60 MCAL/UART/UART_Interface.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x3c19
+.debug_info     0x0000000000000000     0x418d
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/xc8/avr/lib/avr5/memx-const/crtatmega32.o
- .debug_info    0x00000000000004e6      0x4fb APP/APP.o
- .debug_info    0x00000000000009e1      0x42f HAL/IO/Buzzer/BUZZER_Interface.o
- .debug_info    0x0000000000000e10      0x469 HAL/IO/LED/LED1/LED1_Interface.o
- .debug_info    0x0000000000001279      0x469 HAL/IO/LED/LED2/LED2_Interface.o
- .debug_info    0x00000000000016e2      0x469 HAL/IO/LED/LED3/LED3_Interface.o
- .debug_info    0x0000000000001b4b      0x75f HAL/IO/Motors/DC/DC_Interface.o
- .debug_info    0x00000000000022aa      0x6d1 main.o
- .debug_info    0x000000000000297b      0x441 MCAL/ADC/ADC_Interface.o
- .debug_info    0x0000000000002dbc      0x66d MCAL/DIO/DIO_Interface.o
- .debug_info    0x0000000000003429      0x7f0 MCAL/UART/UART_Interface.o
+ .debug_info    0x00000000000004e6      0x5be APP/APP.o
+ .debug_info    0x0000000000000aa4      0x471 HAL/IO/Buzzer/BUZZER_Interface.o
+ .debug_info    0x0000000000000f15      0x469 HAL/IO/LED/LED1/LED1_Interface.o
+ .debug_info    0x000000000000137e      0x469 HAL/IO/LED/LED2/LED2_Interface.o
+ .debug_info    0x00000000000017e7      0x469 HAL/IO/LED/LED3/LED3_Interface.o
+ .debug_info    0x0000000000001c50      0x75f HAL/IO/Motors/DC/DC_Interface.o
+ .debug_info    0x00000000000023af      0x3f2 HAL/IO/Motors/SERVO/Servo_Interface.o
+ .debug_info    0x00000000000027a1      0x74e main.o
+ .debug_info    0x0000000000002eef      0x441 MCAL/ADC/ADC_Interface.o
+ .debug_info    0x0000000000003330      0x66d MCAL/DIO/DIO_Interface.o
+ .debug_info    0x000000000000399d      0x7f0 MCAL/UART/UART_Interface.o
 
-.debug_abbrev   0x0000000000000000      0xc3d
+.debug_abbrev   0x0000000000000000      0xccb
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x4a3 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/xc8/avr/lib/avr5/memx-const/crtatmega32.o
- .debug_abbrev  0x00000000000004a3       0xe9 APP/APP.o
- .debug_abbrev  0x000000000000058c       0x89 HAL/IO/Buzzer/BUZZER_Interface.o
- .debug_abbrev  0x0000000000000615       0x7c HAL/IO/LED/LED1/LED1_Interface.o
- .debug_abbrev  0x0000000000000691       0x7c HAL/IO/LED/LED2/LED2_Interface.o
- .debug_abbrev  0x000000000000070d       0x7c HAL/IO/LED/LED3/LED3_Interface.o
- .debug_abbrev  0x0000000000000789       0xdd HAL/IO/Motors/DC/DC_Interface.o
- .debug_abbrev  0x0000000000000866       0xf1 main.o
- .debug_abbrev  0x0000000000000957       0xb6 MCAL/ADC/ADC_Interface.o
- .debug_abbrev  0x0000000000000a0d       0xdf MCAL/DIO/DIO_Interface.o
- .debug_abbrev  0x0000000000000aec      0x151 MCAL/UART/UART_Interface.o
+ .debug_abbrev  0x00000000000004a3       0xf2 APP/APP.o
+ .debug_abbrev  0x0000000000000595       0x7c HAL/IO/Buzzer/BUZZER_Interface.o
+ .debug_abbrev  0x0000000000000611       0x7c HAL/IO/LED/LED1/LED1_Interface.o
+ .debug_abbrev  0x000000000000068d       0x7c HAL/IO/LED/LED2/LED2_Interface.o
+ .debug_abbrev  0x0000000000000709       0x7c HAL/IO/LED/LED3/LED3_Interface.o
+ .debug_abbrev  0x0000000000000785       0xdd HAL/IO/Motors/DC/DC_Interface.o
+ .debug_abbrev  0x0000000000000862       0xa1 HAL/IO/Motors/SERVO/Servo_Interface.o
+ .debug_abbrev  0x0000000000000903       0xe2 main.o
+ .debug_abbrev  0x00000000000009e5       0xb6 MCAL/ADC/ADC_Interface.o
+ .debug_abbrev  0x0000000000000a9b       0xdf MCAL/DIO/DIO_Interface.o
+ .debug_abbrev  0x0000000000000b7a      0x151 MCAL/UART/UART_Interface.o
 
-.debug_line     0x0000000000000000     0x14eb
+.debug_line     0x0000000000000000     0x1675
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x119 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/xc8/avr/lib/avr5/memx-const/crtatmega32.o
- .debug_line    0x0000000000000119      0x281 APP/APP.o
- .debug_line    0x000000000000039a      0x115 HAL/IO/Buzzer/BUZZER_Interface.o
- .debug_line    0x00000000000004af       0xcd HAL/IO/LED/LED1/LED1_Interface.o
- .debug_line    0x000000000000057c       0xcd HAL/IO/LED/LED2/LED2_Interface.o
- .debug_line    0x0000000000000649       0xcd HAL/IO/LED/LED3/LED3_Interface.o
- .debug_line    0x0000000000000716      0x20b HAL/IO/Motors/DC/DC_Interface.o
- .debug_line    0x0000000000000921      0x248 main.o
- .debug_line    0x0000000000000b69      0x146 MCAL/ADC/ADC_Interface.o
- .debug_line    0x0000000000000caf      0x434 MCAL/DIO/DIO_Interface.o
- .debug_line    0x00000000000010e3      0x408 MCAL/UART/UART_Interface.o
+ .debug_line    0x0000000000000119      0x2ef APP/APP.o
+ .debug_line    0x0000000000000408       0xcd HAL/IO/Buzzer/BUZZER_Interface.o
+ .debug_line    0x00000000000004d5       0xcd HAL/IO/LED/LED1/LED1_Interface.o
+ .debug_line    0x00000000000005a2       0xcd HAL/IO/LED/LED2/LED2_Interface.o
+ .debug_line    0x000000000000066f       0xcd HAL/IO/LED/LED3/LED3_Interface.o
+ .debug_line    0x000000000000073c      0x20b HAL/IO/Motors/DC/DC_Interface.o
+ .debug_line    0x0000000000000947      0x120 HAL/IO/Motors/SERVO/Servo_Interface.o
+ .debug_line    0x0000000000000a67      0x28c main.o
+ .debug_line    0x0000000000000cf3      0x146 MCAL/ADC/ADC_Interface.o
+ .debug_line    0x0000000000000e39      0x434 MCAL/DIO/DIO_Interface.o
+ .debug_line    0x000000000000126d      0x408 MCAL/UART/UART_Interface.o
 
-.debug_frame    0x0000000000000000      0x43c
+.debug_frame    0x0000000000000000      0x460
  *(.debug_frame)
  .debug_frame   0x0000000000000000       0x64 APP/APP.o
  .debug_frame   0x0000000000000064       0x54 HAL/IO/Buzzer/BUZZER_Interface.o
@@ -1146,33 +1139,35 @@ END GROUP
  .debug_frame   0x000000000000010c       0x54 HAL/IO/LED/LED2/LED2_Interface.o
  .debug_frame   0x0000000000000160       0x54 HAL/IO/LED/LED3/LED3_Interface.o
  .debug_frame   0x00000000000001b4       0x5c HAL/IO/Motors/DC/DC_Interface.o
- .debug_frame   0x0000000000000210       0x3c main.o
- .debug_frame   0x000000000000024c       0x34 MCAL/ADC/ADC_Interface.o
- .debug_frame   0x0000000000000280       0xb4 MCAL/DIO/DIO_Interface.o
- .debug_frame   0x0000000000000334      0x108 MCAL/UART/UART_Interface.o
+ .debug_frame   0x0000000000000210       0x34 HAL/IO/Motors/SERVO/Servo_Interface.o
+ .debug_frame   0x0000000000000244       0x2c main.o
+ .debug_frame   0x0000000000000270       0x34 MCAL/ADC/ADC_Interface.o
+ .debug_frame   0x00000000000002a4       0xb4 MCAL/DIO/DIO_Interface.o
+ .debug_frame   0x0000000000000358      0x108 MCAL/UART/UART_Interface.o
 
-.debug_str      0x0000000000000000      0x3cd
+.debug_str      0x0000000000000000      0x424
  *(.debug_str)
  .debug_str     0x0000000000000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/xc8/avr/lib/avr5/memx-const/crtatmega32.o
- .debug_str     0x0000000000000196       0x48 APP/APP.o
- .debug_str     0x00000000000001de       0x37 HAL/IO/Buzzer/BUZZER_Interface.o
- .debug_str     0x0000000000000215       0x37 HAL/IO/LED/LED1/LED1_Interface.o
- .debug_str     0x000000000000024c       0x37 HAL/IO/LED/LED2/LED2_Interface.o
- .debug_str     0x0000000000000283       0x37 HAL/IO/LED/LED3/LED3_Interface.o
- .debug_str     0x00000000000002ba       0x2a HAL/IO/Motors/DC/DC_Interface.o
- .debug_str     0x00000000000002e4       0xbf main.o
- .debug_str     0x00000000000003a3        0x0 MCAL/ADC/ADC_Interface.o
- .debug_str     0x00000000000003a3        0x5 MCAL/DIO/DIO_Interface.o
- .debug_str     0x00000000000003a8       0x25 MCAL/UART/UART_Interface.o
+ .debug_str     0x0000000000000196       0x63 APP/APP.o
+ .debug_str     0x00000000000001f9       0x37 HAL/IO/Buzzer/BUZZER_Interface.o
+ .debug_str     0x0000000000000230       0x37 HAL/IO/LED/LED1/LED1_Interface.o
+ .debug_str     0x0000000000000267       0x37 HAL/IO/LED/LED2/LED2_Interface.o
+ .debug_str     0x000000000000029e       0x37 HAL/IO/LED/LED3/LED3_Interface.o
+ .debug_str     0x00000000000002d5       0x2a HAL/IO/Motors/DC/DC_Interface.o
+ .debug_str     0x00000000000002ff       0x14 HAL/IO/Motors/SERVO/Servo_Interface.o
+ .debug_str     0x0000000000000313       0xe7 main.o
+ .debug_str     0x00000000000003fa        0x0 MCAL/ADC/ADC_Interface.o
+ .debug_str     0x00000000000003fa        0x5 MCAL/DIO/DIO_Interface.o
+ .debug_str     0x00000000000003ff       0x25 MCAL/UART/UART_Interface.o
 
-.debug_loc      0x0000000000000000     0x100a
+.debug_loc      0x0000000000000000      0xfd7
  *(.debug_loc)
  .debug_loc     0x0000000000000000      0x16b APP/APP.o
  .debug_loc     0x000000000000016b      0x156 HAL/IO/Motors/DC/DC_Interface.o
- .debug_loc     0x00000000000002c1       0x73 main.o
- .debug_loc     0x0000000000000334      0x12b MCAL/ADC/ADC_Interface.o
- .debug_loc     0x000000000000045f      0x628 MCAL/DIO/DIO_Interface.o
- .debug_loc     0x0000000000000a87      0x583 MCAL/UART/UART_Interface.o
+ .debug_loc     0x00000000000002c1       0x40 main.o
+ .debug_loc     0x0000000000000301      0x12b MCAL/ADC/ADC_Interface.o
+ .debug_loc     0x000000000000042c      0x628 MCAL/DIO/DIO_Interface.o
+ .debug_loc     0x0000000000000a54      0x583 MCAL/UART/UART_Interface.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1192,7 +1187,7 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000      0x1b0
+.debug_ranges   0x0000000000000000      0x1c8
  *(.debug_ranges)
  .debug_ranges  0x0000000000000000       0x18 APP/APP.o
  .debug_ranges  0x0000000000000018       0x28 HAL/IO/Buzzer/BUZZER_Interface.o
@@ -1200,10 +1195,11 @@ END GROUP
  .debug_ranges  0x0000000000000068       0x28 HAL/IO/LED/LED2/LED2_Interface.o
  .debug_ranges  0x0000000000000090       0x28 HAL/IO/LED/LED3/LED3_Interface.o
  .debug_ranges  0x00000000000000b8       0x28 HAL/IO/Motors/DC/DC_Interface.o
- .debug_ranges  0x00000000000000e0       0x10 main.o
- .debug_ranges  0x00000000000000f0       0x18 MCAL/ADC/ADC_Interface.o
- .debug_ranges  0x0000000000000108       0x58 MCAL/DIO/DIO_Interface.o
- .debug_ranges  0x0000000000000160       0x50 MCAL/UART/UART_Interface.o
+ .debug_ranges  0x00000000000000e0       0x18 HAL/IO/Motors/SERVO/Servo_Interface.o
+ .debug_ranges  0x00000000000000f8       0x10 main.o
+ .debug_ranges  0x0000000000000108       0x18 MCAL/ADC/ADC_Interface.o
+ .debug_ranges  0x0000000000000120       0x58 MCAL/DIO/DIO_Interface.o
+ .debug_ranges  0x0000000000000178       0x50 MCAL/UART/UART_Interface.o
 
 .debug_macro
  *(.debug_macro)
@@ -1220,237 +1216,261 @@ LOAD data_init
  .bss.speed     0x0000000000800060        0x2 main.o
                 0x0000000000800060                speed
 
-.text.UART_Initialize_WithoutInterrupt
-                0x00000000000000be      0x120
- .text.UART_Initialize_WithoutInterrupt
-                0x00000000000000be      0x120 MCAL/UART/UART_Interface.o
-                0x00000000000000be                UART_Initialize_WithoutInterrupt
+.bss.currentState
+                0x0000000000800064        0x1
+ .bss.currentState
+                0x0000000000800064        0x1 main.o
+                0x0000000000800064                currentState
+
+.bss.UART_Rdata
+                0x0000000000800062        0x2
+ .bss.UART_Rdata
+                0x0000000000800062        0x2 main.o
+                0x0000000000800062                UART_Rdata
 
 .text.handle_Mes
-                0x00000000000001de      0x104
+                0x00000000000000be      0x132
  .text.handle_Mes
-                0x00000000000001de      0x104 APP/APP.o
-                0x00000000000001de                handle_Mes
+                0x00000000000000be      0x132 APP/APP.o
+                0x00000000000000be                handle_Mes
+
+.text.UART_Initialize_WithoutInterrupt
+                0x00000000000001f0      0x120
+ .text.UART_Initialize_WithoutInterrupt
+                0x00000000000001f0      0x120 MCAL/UART/UART_Interface.o
+                0x00000000000001f0                UART_Initialize_WithoutInterrupt
 
 .text.DIO_SetPinDirection
-                0x00000000000002e2       0xe2
+                0x0000000000000310       0xe2
  .text.DIO_SetPinDirection
-                0x00000000000002e2       0xe2 MCAL/DIO/DIO_Interface.o
-                0x00000000000002e2                DIO_SetPinDirection
+                0x0000000000000310       0xe2 MCAL/DIO/DIO_Interface.o
+                0x0000000000000310                DIO_SetPinDirection
 
 .text.DIO_SetPinValue
-                0x00000000000003c4       0xe2
+                0x00000000000003f2       0xe2
  .text.DIO_SetPinValue
-                0x00000000000003c4       0xe2 MCAL/DIO/DIO_Interface.o
-                0x00000000000003c4                DIO_SetPinValue
+                0x00000000000003f2       0xe2 MCAL/DIO/DIO_Interface.o
+                0x00000000000003f2                DIO_SetPinValue
 
-.text.DC_Start  0x00000000000004a6       0x94
+.text.DC_Start  0x00000000000004d4       0x94
  .text.DC_Start
-                0x00000000000004a6       0x94 HAL/IO/Motors/DC/DC_Interface.o
-                0x00000000000004a6                DC_Start
+                0x00000000000004d4       0x94 HAL/IO/Motors/DC/DC_Interface.o
+                0x00000000000004d4                DC_Start
 
-.text.main      0x000000000000053a       0x90
- .text.main     0x000000000000053a       0x90 main.o
-                0x000000000000053a                main
+.text.main      0x0000000000000568       0x82
+ .text.main     0x0000000000000568       0x82 main.o
+                0x0000000000000568                main
 
-.text           0x00000000000005ca       0x7a
- .text          0x00000000000005ca       0x7a c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(floatsisf.o)
-                0x00000000000005ca                __floatunsisf
-                0x00000000000005ce                __floatsisf
+.text           0x00000000000005ea       0x7a
+ .text          0x00000000000005ea       0x7a c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(floatsisf.o)
+                0x00000000000005ea                __floatunsisf
+                0x00000000000005ee                __floatsisf
 
-.text.ADC_Read  0x0000000000000644       0x74
+.text.ADC_Read  0x0000000000000664       0x74
  .text.ADC_Read
-                0x0000000000000644       0x74 MCAL/ADC/ADC_Interface.o
-                0x0000000000000644                ADC_Read
+                0x0000000000000664       0x74 MCAL/ADC/ADC_Interface.o
+                0x0000000000000664                ADC_Read
 
 .text.DC_Initialize
-                0x00000000000006b8       0x50
+                0x00000000000006d8       0x50
  .text.DC_Initialize
-                0x00000000000006b8       0x50 HAL/IO/Motors/DC/DC_Interface.o
-                0x00000000000006b8                DC_Initialize
+                0x00000000000006d8       0x50 HAL/IO/Motors/DC/DC_Interface.o
+                0x00000000000006d8                DC_Initialize
 
-.text.DC_Stop   0x0000000000000708       0x4c
- .text.DC_Stop  0x0000000000000708       0x4c HAL/IO/Motors/DC/DC_Interface.o
-                0x0000000000000708                DC_Stop
+.text.DC_Stop   0x0000000000000728       0x4c
+ .text.DC_Stop  0x0000000000000728       0x4c HAL/IO/Motors/DC/DC_Interface.o
+                0x0000000000000728                DC_Stop
 
 .text.UART_Receive_Word
-                0x0000000000000754       0x4a
+                0x0000000000000774       0x4a
  .text.UART_Receive_Word
-                0x0000000000000754       0x4a MCAL/UART/UART_Interface.o
-                0x0000000000000754                UART_Receive_Word
+                0x0000000000000774       0x4a MCAL/UART/UART_Interface.o
+                0x0000000000000774                UART_Receive_Word
 
-.text           0x000000000000079e       0x48
- .text          0x000000000000079e       0x48 c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_cmp.o)
-                0x000000000000079e                __fp_cmp
-
-.text.libgcc.div
-                0x00000000000007e6       0x44
- .text.libgcc.div
-                0x00000000000007e6       0x44 c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodsi4.o)
-                0x00000000000007e6                __udivmodsi4
+.text           0x00000000000007be       0x48
+ .text          0x00000000000007be       0x48 c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_cmp.o)
+                0x00000000000007be                __fp_cmp
 
 .text.libgcc.div
-                0x000000000000082a       0x2e
+                0x0000000000000806       0x44
  .text.libgcc.div
-                0x000000000000082a       0x2e c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodsi4.o)
-                0x000000000000082a                __divmodsi4
+                0x0000000000000806       0x44 c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodsi4.o)
+                0x0000000000000806                __udivmodsi4
+
+.text.libgcc.div
+                0x000000000000084a       0x2e
+ .text.libgcc.div
+                0x000000000000084a       0x2e c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodsi4.o)
+                0x000000000000084a                __divmodsi4
 
 .text.DC_Change_Speed
-                0x0000000000000858       0x24
+                0x0000000000000878       0x24
  .text.DC_Change_Speed
-                0x0000000000000858       0x24 HAL/IO/Motors/DC/DC_Interface.o
-                0x0000000000000858                DC_Change_Speed
+                0x0000000000000878       0x24 HAL/IO/Motors/DC/DC_Interface.o
+                0x0000000000000878                DC_Change_Speed
 
-.text.exit      0x000000000000087c       0x16
- .text.exit     0x000000000000087c       0x16 c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
-                0x000000000000087c                exit
+.text.ServoMotor_Initialize
+                0x000000000000089c       0x20
+ .text.ServoMotor_Initialize
+                0x000000000000089c       0x20 HAL/IO/Motors/SERVO/Servo_Interface.o
+                0x000000000000089c                ServoMotor_Initialize
+
+.text.ServoMotor_Rotate
+                0x00000000000008bc       0x1a
+ .text.ServoMotor_Rotate
+                0x00000000000008bc       0x1a HAL/IO/Motors/SERVO/Servo_Interface.o
+                0x00000000000008bc                ServoMotor_Rotate
+
+.text.exit      0x00000000000008d6       0x16
+ .text.exit     0x00000000000008d6       0x16 c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
+                0x00000000000008d6                exit
 
 .text.libgcc.div
-                0x0000000000000892       0x10
+                0x00000000000008ec       0x10
  .text.libgcc.div
-                0x0000000000000892       0x10 c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_negsi2.o)
-                0x0000000000000892                __negsi2
+                0x00000000000008ec       0x10 c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_negsi2.o)
+                0x00000000000008ec                __negsi2
 
 .text.ADC_Initialize
-                0x00000000000008a2        0xe
+                0x00000000000008fc        0xe
  .text.ADC_Initialize
-                0x00000000000008a2        0xe MCAL/ADC/ADC_Interface.o
-                0x00000000000008a2                ADC_Initialize
+                0x00000000000008fc        0xe MCAL/ADC/ADC_Interface.o
+                0x00000000000008fc                ADC_Initialize
 
 .text.UART_Receive_Character
-                0x00000000000008b0        0xe
+                0x000000000000090a        0xe
  .text.UART_Receive_Character
-                0x00000000000008b0        0xe MCAL/UART/UART_Interface.o
-                0x00000000000008b0                UART_Receive_Character
+                0x000000000000090a        0xe MCAL/UART/UART_Interface.o
+                0x000000000000090a                UART_Receive_Character
 
 .text.BUZZER_Initialize
-                0x00000000000008be        0xc
+                0x0000000000000918        0xc
  .text.BUZZER_Initialize
-                0x00000000000008be        0xc HAL/IO/Buzzer/BUZZER_Interface.o
-                0x00000000000008be                BUZZER_Initialize
+                0x0000000000000918        0xc HAL/IO/Buzzer/BUZZER_Interface.o
+                0x0000000000000918                BUZZER_Initialize
 
 .text.BUZZER_ON
-                0x00000000000008ca        0xc
+                0x0000000000000924        0xc
  .text.BUZZER_ON
-                0x00000000000008ca        0xc HAL/IO/Buzzer/BUZZER_Interface.o
-                0x00000000000008ca                BUZZER_ON
+                0x0000000000000924        0xc HAL/IO/Buzzer/BUZZER_Interface.o
+                0x0000000000000924                BUZZER_ON
 
 .text.BUZZER_OFF
-                0x00000000000008d6        0xc
+                0x0000000000000930        0xc
  .text.BUZZER_OFF
-                0x00000000000008d6        0xc HAL/IO/Buzzer/BUZZER_Interface.o
-                0x00000000000008d6                BUZZER_OFF
+                0x0000000000000930        0xc HAL/IO/Buzzer/BUZZER_Interface.o
+                0x0000000000000930                BUZZER_OFF
 
 .text.LED1_Initialize
-                0x00000000000008e2        0xc
+                0x000000000000093c        0xc
  .text.LED1_Initialize
-                0x00000000000008e2        0xc HAL/IO/LED/LED1/LED1_Interface.o
-                0x00000000000008e2                LED1_Initialize
+                0x000000000000093c        0xc HAL/IO/LED/LED1/LED1_Interface.o
+                0x000000000000093c                LED1_Initialize
 
-.text.LED1_ON   0x00000000000008ee        0xc
- .text.LED1_ON  0x00000000000008ee        0xc HAL/IO/LED/LED1/LED1_Interface.o
-                0x00000000000008ee                LED1_ON
+.text.LED1_ON   0x0000000000000948        0xc
+ .text.LED1_ON  0x0000000000000948        0xc HAL/IO/LED/LED1/LED1_Interface.o
+                0x0000000000000948                LED1_ON
 
-.text.LED1_OFF  0x00000000000008fa        0xc
+.text.LED1_OFF  0x0000000000000954        0xc
  .text.LED1_OFF
-                0x00000000000008fa        0xc HAL/IO/LED/LED1/LED1_Interface.o
-                0x00000000000008fa                LED1_OFF
+                0x0000000000000954        0xc HAL/IO/LED/LED1/LED1_Interface.o
+                0x0000000000000954                LED1_OFF
 
 .text.LED2_Initialize
-                0x0000000000000906        0xc
+                0x0000000000000960        0xc
  .text.LED2_Initialize
-                0x0000000000000906        0xc HAL/IO/LED/LED2/LED2_Interface.o
-                0x0000000000000906                LED2_Initialize
+                0x0000000000000960        0xc HAL/IO/LED/LED2/LED2_Interface.o
+                0x0000000000000960                LED2_Initialize
 
-.text.LED2_ON   0x0000000000000912        0xc
- .text.LED2_ON  0x0000000000000912        0xc HAL/IO/LED/LED2/LED2_Interface.o
-                0x0000000000000912                LED2_ON
+.text.LED2_ON   0x000000000000096c        0xc
+ .text.LED2_ON  0x000000000000096c        0xc HAL/IO/LED/LED2/LED2_Interface.o
+                0x000000000000096c                LED2_ON
 
-.text.LED2_OFF  0x000000000000091e        0xc
+.text.LED2_OFF  0x0000000000000978        0xc
  .text.LED2_OFF
-                0x000000000000091e        0xc HAL/IO/LED/LED2/LED2_Interface.o
-                0x000000000000091e                LED2_OFF
+                0x0000000000000978        0xc HAL/IO/LED/LED2/LED2_Interface.o
+                0x0000000000000978                LED2_OFF
 
 .text.LED3_Initialize
-                0x000000000000092a        0xc
+                0x0000000000000984        0xc
  .text.LED3_Initialize
-                0x000000000000092a        0xc HAL/IO/LED/LED3/LED3_Interface.o
-                0x000000000000092a                LED3_Initialize
+                0x0000000000000984        0xc HAL/IO/LED/LED3/LED3_Interface.o
+                0x0000000000000984                LED3_Initialize
 
-.text.LED3_ON   0x0000000000000936        0xc
- .text.LED3_ON  0x0000000000000936        0xc HAL/IO/LED/LED3/LED3_Interface.o
-                0x0000000000000936                LED3_ON
+.text.LED3_ON   0x0000000000000990        0xc
+ .text.LED3_ON  0x0000000000000990        0xc HAL/IO/LED/LED3/LED3_Interface.o
+                0x0000000000000990                LED3_ON
 
-.text.LED3_OFF  0x0000000000000942        0xc
+.text.LED3_OFF  0x000000000000099c        0xc
  .text.LED3_OFF
-                0x0000000000000942        0xc HAL/IO/LED/LED3/LED3_Interface.o
-                0x0000000000000942                LED3_OFF
+                0x000000000000099c        0xc HAL/IO/LED/LED3/LED3_Interface.o
+                0x000000000000099c                LED3_OFF
 
-.text.libgcc    0x000000000000094e        0xc
- .text.libgcc   0x000000000000094e        0xc c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
-                0x000000000000094e                __tablejump2__
+.text.libgcc    0x00000000000009a8        0xc
+ .text.libgcc   0x00000000000009a8        0xc c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+                0x00000000000009a8                __tablejump2__
 
 .text.Reassemble_uint16
-                0x000000000000095a        0xa
+                0x00000000000009b4        0xa
  .text.Reassemble_uint16
-                0x000000000000095a        0xa MCAL/UART/UART_Interface.o
-                0x000000000000095a                Reassemble_uint16
+                0x00000000000009b4        0xa MCAL/UART/UART_Interface.o
+                0x00000000000009b4                Reassemble_uint16
 
-.text           0x0000000000000964        0xa
- .text          0x0000000000000964        0xa c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(cmpsf2.o)
-                0x0000000000000964                __nesf2
-                0x0000000000000964                __eqsf2
-                0x0000000000000964                __cmpsf2
-                0x0000000000000964                __ltsf2
-                0x0000000000000964                __lesf2
+.text           0x00000000000009be        0xa
+ .text          0x00000000000009be        0xa c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(cmpsf2.o)
+                0x00000000000009be                __nesf2
+                0x00000000000009be                __eqsf2
+                0x00000000000009be                __cmpsf2
+                0x00000000000009be                __ltsf2
+                0x00000000000009be                __lesf2
 
-.text           0x000000000000096e        0xa
- .text          0x000000000000096e        0xa c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(gesf2.o)
-                0x000000000000096e                __gesf2
-                0x000000000000096e                __gtsf2
+.text           0x00000000000009c8        0xa
+ .text          0x00000000000009c8        0xa c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(gesf2.o)
+                0x00000000000009c8                __gesf2
+                0x00000000000009c8                __gtsf2
 
-.text           0x0000000000000978        0x4
- .text          0x0000000000000978        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/xc8/avr/lib/avr5/memx-const/crtatmega32.o
-                0x0000000000000978                __vector_1
-                0x0000000000000978                __vector_12
-                0x0000000000000978                __bad_interrupt
-                0x0000000000000978                __vector_6
-                0x0000000000000978                __vector_3
-                0x0000000000000978                __vector_11
-                0x0000000000000978                __vector_13
-                0x0000000000000978                __vector_17
-                0x0000000000000978                __vector_19
-                0x0000000000000978                __vector_7
-                0x0000000000000978                __vector_5
-                0x0000000000000978                __vector_4
-                0x0000000000000978                __vector_9
-                0x0000000000000978                __vector_2
-                0x0000000000000978                __vector_15
-                0x0000000000000978                __vector_8
-                0x0000000000000978                __vector_14
-                0x0000000000000978                __vector_10
-                0x0000000000000978                __vector_16
-                0x0000000000000978                __vector_18
-                0x0000000000000978                __vector_20
+.text           0x00000000000009d2        0x4
+ .text          0x00000000000009d2        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/xc8/avr/lib/avr5/memx-const/crtatmega32.o
+                0x00000000000009d2                __vector_1
+                0x00000000000009d2                __vector_12
+                0x00000000000009d2                __bad_interrupt
+                0x00000000000009d2                __vector_6
+                0x00000000000009d2                __vector_3
+                0x00000000000009d2                __vector_11
+                0x00000000000009d2                __vector_13
+                0x00000000000009d2                __vector_17
+                0x00000000000009d2                __vector_19
+                0x00000000000009d2                __vector_7
+                0x00000000000009d2                __vector_5
+                0x00000000000009d2                __vector_4
+                0x00000000000009d2                __vector_9
+                0x00000000000009d2                __vector_2
+                0x00000000000009d2                __vector_15
+                0x00000000000009d2                __vector_8
+                0x00000000000009d2                __vector_14
+                0x00000000000009d2                __vector_10
+                0x00000000000009d2                __vector_16
+                0x00000000000009d2                __vector_18
+                0x00000000000009d2                __vector_20
 
-.text._Exit     0x000000000000097c        0x4
- .text._Exit    0x000000000000097c        0x4 c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(_Exit.o)
-                0x000000000000097c                _Exit
+.text._Exit     0x00000000000009d6        0x4
+ .text._Exit    0x00000000000009d6        0x4 c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(_Exit.o)
+                0x00000000000009d6                _Exit
 
 .text.__dummy_fini
-                0x0000000000000980        0x2
+                0x00000000000009da        0x2
  .text.__dummy_fini
-                0x0000000000000980        0x2 c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
-                0x0000000000000980                _fini
+                0x00000000000009da        0x2 c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
+                0x00000000000009da                _fini
 
 .text.__dummy_funcs_on_exit
-                0x0000000000000982        0x2
+                0x00000000000009dc        0x2
  .text.__dummy_funcs_on_exit
-                0x0000000000000982        0x2 c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
-                0x0000000000000982                __funcs_on_exit
+                0x00000000000009dc        0x2 c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
+                0x00000000000009dc                __funcs_on_exit
 
 .text.__dummy_simulator_exit
-                0x0000000000000984        0x2
+                0x00000000000009de        0x2
  .text.__dummy_simulator_exit
-                0x0000000000000984        0x2 c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
-                0x0000000000000984                __simulator_exit
+                0x00000000000009de        0x2 c:/program files/microchip/xc8/v2.36/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
+                0x00000000000009de                __simulator_exit

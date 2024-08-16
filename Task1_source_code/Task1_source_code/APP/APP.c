@@ -30,29 +30,30 @@ void Write_E2PROM_State( E2PROM_State state){
 }
 
 
-void handle_event(temp T,uint8_t counter,dc_motor DC_fan,uint8_t Speed, E2PROM_State* S,uint8_t* reset){
+void handle_event(temp T,uint8_t *counter,dc_motor DC_fan,uint8_t Speed, E2PROM_State* S,uint8_t* reset){
 	
 	/*	check the state	*/
 	check_State(T,counter,S);
 	handle_State(T,DC_fan,Speed,S,reset);
 }
 
-void check_State(temp T,uint8_t counter,E2PROM_State* S){
+void check_State(temp T,uint8_t *counter,E2PROM_State* S){
 	
 	/*	check if the state is changed	*/
 	if(T<50.0 && *S!=Normal_state){
+		*counter=0;
 		*S=Normal_state;
 		eeprom_write_byte (&EEPROM_State_Add, *S);
 		Timer0_OVF_WithInterrupt_Stop();
 	}
-	else if(T>=50.0 && *S!=Emergency_state){
+	else if(T>=50.0 && *S==Normal_state){
 		*S=Emergency_state;
 		eeprom_write_byte (&EEPROM_State_Add, *S);
 		Timer0_OVF_WithInterrupt_Start(Timer0_PRE_1024);
 	}
 	
 	 // 7 seconds elapsed on emergency
-	if(counter>=Emergency_counter_max){
+	if(*counter>=Emergency_counter_max && *S!=Abnormal_state){
 		*S=Abnormal_state;
 		eeprom_write_byte (&EEPROM_State_Add, *S);
 		Timer0_OVF_WithInterrupt_Stop();
@@ -95,13 +96,13 @@ void handle_State(temp T,dc_motor DC_fan,uint8_t Speed,E2PROM_State* S,uint8_t* 
 			*reset=1;
 		break;
 	}
-	//stop fan	
+
 }
 
 void UART_Transmit_State(const temp T,uint8_t counter,uint8_t *bot1f){
 	if (T>=50)
 	{	
-		if (counter<=Emergency_counter_max)
+		if (counter<Emergency_counter_max)
 		{	//Emergency
 			/* Reset the flag	*/
 			*bot1f=0;

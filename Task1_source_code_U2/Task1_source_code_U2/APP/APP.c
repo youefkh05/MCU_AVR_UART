@@ -14,6 +14,7 @@ void handle_Mes(temp T,dc_motor DC_MOT, E2PROM_State* S){
 	LED2_OFF();
 	LED3_OFF();
 	BUZZER_OFF();
+	DC_Start(DC_MOT,DC_CW);
 	
 	if(T<=20.0){
 		LED3_ON();
@@ -38,7 +39,17 @@ void handle_Mes(temp T,dc_motor DC_MOT, E2PROM_State* S){
 		LED1_ON();
 		BUZZER_ON();
 	}
+	else if (T==Abnormal_Mes)
+	{
+		*S=Abnormal_Mes;
+		LED1_ON();
+		BUZZER_ON();
+		DC_Stop(DC_MOT);
+		ServoMotor_Rotate(angle_P90);
+		
+	}
 	else {
+		//for debugg
 		LED1_ON();
 		LED2_ON();
 		LED3_ON();

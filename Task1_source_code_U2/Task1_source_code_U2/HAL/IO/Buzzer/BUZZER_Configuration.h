@@ -14,7 +14,7 @@
 // Renaming Pin
 #define BUZZER_PIN    DIO_PIN4
 // Renaming Port
-#define BUZZER_PORT   PORTB
+#define BUZZER_PORT   DIO_PORTB
 // Renaming Status
 #define BUZZER_LOW    DIO_LOW
 // Renaming Status
